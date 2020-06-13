@@ -87,10 +87,13 @@ class Psb extends CI_Controller
             }
 
             // siapkan kode
-            $thn = substr(date('Y'), 2, 2) . "-" . substr(date('Y', strtotime('+1 years')), 2, 2);
-            $bln = date('md');
-            $kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
-            $fixkode = $thn . "-PSB-" . $bln . $kodemax;
+            // $thn = substr(date('Y'), 2, 2) . "-" . substr(date('Y', strtotime('+1 years')), 2, 2);
+            $thn = substr(date('Y'), 2, 2) . substr(date('Y', strtotime('+1 years')), 2, 2);
+            // $bln = date('md');
+            // $kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
+            $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
+            $fixkode = $thn . $kodemax;
+            // $fixkode = $thn . "-PSB-" . $bln . $kodemax;
 
             $this->Model_siswa_baru->tambahDataSiswaBaru($fixkode);
 
