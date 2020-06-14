@@ -60,7 +60,7 @@
           <small>Contoh:
             <div class="row mt-3">
               <p class="col-sm-3 mb-lg-0">Nomor Formulir</p>
-              <p>: <strong>20-21-PSB-05110001</strong></p>
+              <p>: <strong>2021000</strong></p>
             </div>
             <div class="row">
               <p class="col-sm-3">Password</p>

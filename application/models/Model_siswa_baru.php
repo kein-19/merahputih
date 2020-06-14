@@ -210,6 +210,6 @@ class Model_siswa_baru extends CI_Model
 
         // $this->db->set('image', $new_image);
         $this->db->where('kode_pendaftaran', $fixkode);
-        $this->db->update('tbl_siswa_baru', $data,);
+        $this->db->update('tbl_siswa_baru', $data);
     }
 }
