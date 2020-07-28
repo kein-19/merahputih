@@ -12,7 +12,7 @@ class Admin extends CI_Controller
 
         $this->load->library('form_validation');
         $this->load->model('Model_user');
-        $this->load->model('Model_siswa_baru');
+        $this->load->model('Model_ppdb');
     }
 
 
@@ -20,7 +20,7 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Dashboard';
         $data['tbl_user'] = $this->Model_user->getAdmin();
-        // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getAllSiswaBaru();
+        // $data['tbl_datappdb'] = $this->Model_ppdb->getAllPPDB();
 
         // load library
         $this->load->library('pagination');
@@ -40,9 +40,9 @@ class Admin extends CI_Controller
         $this->db->or_like('asal_sekolah', $data['keyword']);
         $this->db->or_like('kelurahan', $data['keyword']);
         $this->db->or_like('validasi', $data['keyword']);
-        $this->db->from('tbl_siswa_baru');
+        $this->db->from('tbl_datappdb');
         $config['total_rows'] = $this->db->count_all_results();
-        // $config['total_rows'] = $this->Model_siswa_baru->countAllSiswaBaru();
+        // $config['total_rows'] = $this->Model_ppdb->countAllPPDB();
         $data['total_rows'] = $config['total_rows'];
         $config['per_page'] = 5;
 
@@ -55,7 +55,7 @@ class Admin extends CI_Controller
 
         $data['start'] = $this->uri->segment(3);
 
-        $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaruLimit($config['per_page'], $data['start'], $data['keyword']);
+        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDBLimit($config['per_page'], $data['start'], $data['keyword']);
 
 
         $this->load->view('templates/admin/header', $data);
@@ -92,7 +92,7 @@ class Admin extends CI_Controller
     //     $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
     //     $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
 
-    //     $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_siswa_baru.email]', [
+    //     $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_datappdb.email]', [
     //         'is_unique' => 'Email sudah terdaftar!'
     //     ]);
 
@@ -115,10 +115,10 @@ class Admin extends CI_Controller
     //         $this->load->view('admin/add', $data);
     //         $this->load->view('templates/admin/footer');
     //     } else {
-    //         $this->db->select('RIGHT(tbl_siswa_baru.kode_pendaftaran,4) as kode', false);
+    //         $this->db->select('RIGHT(tbl_datappdb.kode_pendaftaran,4) as kode', false);
     //         $this->db->order_by('kode_pendaftaran', 'DESC');
     //         $this->db->limit(1);
-    //         $query = $this->db->get('tbl_siswa_baru'); // cek sudah ada atau belum kodenya
+    //         $query = $this->db->get('tbl_datappdb'); // cek sudah ada atau belum kodenya
     //         if ($query->num_rows() <> 0) {
     //             //jika kodenya sudah ada.      
     //             $data = $query->row();
@@ -137,7 +137,7 @@ class Admin extends CI_Controller
     //         $fixkode = $thn . $kodemax;
     //         // $fixkode = $thn . "-ppdb-" . $bln . $kodemax;
 
-    //         $this->Model_user->addSiswaBaru($fixkode);
+    //         $this->Model_user->addPPDB($fixkode);
 
     //         $this->session->set_flashdata('flash', 'ditambahkan');
     //         redirect('admin');
@@ -149,7 +149,7 @@ class Admin extends CI_Controller
 
     //     $data['tbl_user'] = $this->Model_user->getAdmin();
     //     $data['title'] = 'Detail Data Siswa Baru';
-    //     $data['tbl_siswa_baru'] = $this->Model_user->getSiswaBaruId($kode_pendaftaran);
+    //     $data['tbl_datappdb'] = $this->Model_user->getPPDBId($kode_pendaftaran);
 
     //     $this->load->view('templates/admin/header', $data);
     //     $this->load->view('templates/admin/sidebar', $data);
@@ -200,7 +200,7 @@ class Admin extends CI_Controller
     //     if ($this->form_validation->run() == false) {
     //         $data['tbl_user'] = $this->Model_user->getAdmin();
     //         $data['title'] = 'Edit Data Siswa Baru';
-    //         $data['tbl_siswa_baru'] = $this->Model_user->getSiswaBaruId($kode_pendaftaran);
+    //         $data['tbl_datappdb'] = $this->Model_user->getPPDBId($kode_pendaftaran);
 
     //         $this->load->view('templates/admin/header', $data);
     //         $this->load->view('templates/admin/sidebar', $data);
@@ -208,7 +208,7 @@ class Admin extends CI_Controller
     //         $this->load->view('admin/edit', $data);
     //         $this->load->view('templates/admin/footer');
     //     } else {
-    //         $this->Model_user->editSiswaBaru();
+    //         $this->Model_user->editPPDB();
     //         $this->session->set_flashdata('flash', 'diupdate');
     //         redirect('admin');
     //     }
@@ -216,7 +216,7 @@ class Admin extends CI_Controller
 
     // public function delete($kode_pendaftaran)
     // {
-    //     $this->Model_user->deleteSiswaBaru($kode_pendaftaran);
+    //     $this->Model_user->deletePPDB($kode_pendaftaran);
     //     $this->session->set_flashdata('flash', 'dihapus');
     //     redirect('admin');
     // }

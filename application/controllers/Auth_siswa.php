@@ -7,7 +7,7 @@ class Auth_siswa extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->model('Model_siswa_baru');
+        $this->load->model('Model_ppdb');
 
         // $this->load->model('Model_user');
         // $this->load->model('Model_guru');
@@ -37,7 +37,7 @@ class Auth_siswa extends CI_Controller
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $siswa_baru = $this->db->get_where('tbl_siswa_baru', ['email' => $email])->row_array();
+        $siswa_baru = $this->db->get_where('tbl_datappdb', ['email' => $email])->row_array();
 
         // jika usernya ada
         if ($siswa_baru) {
@@ -164,7 +164,7 @@ class Auth_siswa extends CI_Controller
             $this->load->view('siswa_baru/registration');
             $this->load->view('templates/siswa/auth_footer');
         } else {
-            $this->Model_siswa_baru->tambahDataSiswaBaru();
+            $this->Model_ppdb->tambahDataPPDB();
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Selamat! Terima kasih anda sudah mendaftar di SMK Merah Putih. Silahkan login!</div>');
             redirect('auth_siswa');
 

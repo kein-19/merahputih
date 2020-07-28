@@ -6,7 +6,7 @@ class Home extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Model_siswa_baru');
+        $this->load->model('Model_ppdb');
     }
 
     public function index()
@@ -32,9 +32,9 @@ class Home extends CI_Controller
         $this->db->or_like('asal_sekolah', $data['keyword']);
         $this->db->or_like('kelurahan', $data['keyword']);
         $this->db->or_like('validasi', $data['keyword']);
-        $this->db->from('tbl_siswa_baru');
+        $this->db->from('tbl_datappdb');
         $config['total_rows'] = $this->db->count_all_results();
-        // $config['total_rows'] = $this->Model_siswa_baru->countAllSiswaBaru();
+        // $config['total_rows'] = $this->Model_ppdb->countAllPPDB();
         $data['total_rows'] = $config['total_rows'];
         $config['per_page'] = 5;
 
@@ -47,7 +47,7 @@ class Home extends CI_Controller
 
         $data['start'] = $this->uri->segment(3);
 
-        $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaruLimit($config['per_page'], $data['start'], $data['keyword']);
+        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDBLimit($config['per_page'], $data['start'], $data['keyword']);
 
         $this->load->view('templates/header', $data);
         $this->load->view('home/index', $data);

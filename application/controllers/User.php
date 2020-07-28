@@ -26,14 +26,14 @@ class User extends CI_Controller
         //chekAksesModule();
         $this->load->library('form_validation');
         // $this->load->library('ssp');
-        $this->load->model('Model_siswa_baru');
+        $this->load->model('Model_ppdb');
     }
 
 
     public function index()
     {
         $data['title'] = 'Home';
-        $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
+        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
 
         $this->load->view('templates/_partials/header', $data);
         $this->load->view('templates/_partials/sidebar', $data);
@@ -45,12 +45,12 @@ class User extends CI_Controller
 
     public function profile()
     {
-        // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
-        // $this->Model_siswa_baru->getAgama();
+        // $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
+        // $this->Model_ppdb->getAgama();
         // $this->db->get('tbl_agama')->row_array();
-        // $this->db->get_where('tbl_siswa_baru', ['kode_pendaftaran' => $this->session->userdata('kode_pendaftaran')])->row_array();
+        // $this->db->get_where('tbl_datappdb', ['kode_pendaftaran' => $this->session->userdata('kode_pendaftaran')])->row_array();
         $data['title'] = 'My Profile';
-        $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
+        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
 
         $this->load->view('templates/_partials/header', $data);
         $this->load->view('templates/_partials/sidebar', $data);
@@ -62,8 +62,8 @@ class User extends CI_Controller
     public function editProfile()
     {
         $data['title'] = 'Edit Profile';
-        $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
-        // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getAgama();
+        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
+        // $data['tbl_datappdb'] = $this->Model_ppdb->getAgama();
         // $data['nama_agama'] = $this->db->get('tbl_agama')->row_array();
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -121,7 +121,7 @@ class User extends CI_Controller
 
             // $upload_image = $_FILES['image']['nama'];
 
-            $this->Model_siswa_baru->editDataSiswaBaru();
+            $this->Model_ppdb->editDataPPDB();
 
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Profil Anda berhasil diupdate</div>');
             redirect('user/profile');
@@ -165,7 +165,7 @@ class User extends CI_Controller
     //     );
 
     //     $sql_details = array(
-    //         'tbl_siswa_baru' => $this->db->username,
+    //         'tbl_datappdb' => $this->db->username,
     //         'pass' => $this->db->password,
     //         'db' => $this->db->database,
     //         'host' => $this->db->hostname

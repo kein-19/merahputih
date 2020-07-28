@@ -126,7 +126,7 @@
             </thead>
             <tbody>
 
-              <?php if (empty($tbl_siswa_baru)) : ?>
+              <?php if (empty($tbl_datappdb)) : ?>
                 <tr>
                   <td colspan="6">
                     <div class="alert alert-danger" role="alert">
@@ -136,7 +136,7 @@
                 </tr>
               <?php endif; ?>
 
-              <?php foreach ($tbl_siswa_baru as $sb) : ?>
+              <?php foreach ($tbl_datappdb as $sb) : ?>
                 <tr>
                   <th class="align-middle" scope="row"><?= ++$start; ?></th>
                   <td class="align-middle"><?= $sb['kode_pendaftaran']; ?></td>

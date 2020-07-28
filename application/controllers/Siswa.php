@@ -9,14 +9,15 @@ class Siswa extends CI_Controller
         is_logged_in();
         $this->load->library('form_validation');
         $this->load->model('Model_user');
-        $this->load->model('Model_siswa_baru');
+        // $this->load->model('Model_siswa');
+        $this->load->model('Model_siswa');
     }
 
     public function index()
     {
-        $data['title'] = 'Daftar Calon Siswa Baru';
+        $data['title'] = 'Daftar Siswa';
         $data['tbl_user'] = $this->Model_user->getAdmin();
-        // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getAllSiswaBaru();
+        // $data['tbl_siswa'] = $this->Model_siswa->getAllSiswa();
 
         // load library
         $this->load->library('pagination');
@@ -31,14 +32,12 @@ class Siswa extends CI_Controller
         }
 
         // config
-        $this->db->like('kode_pendaftaran', $data['keyword']);
+        $this->db->like('nis', $data['keyword']);
         $this->db->or_like('nama', $data['keyword']);
-        $this->db->or_like('asal_sekolah', $data['keyword']);
         $this->db->or_like('kelurahan', $data['keyword']);
-        $this->db->or_like('validasi', $data['keyword']);
-        $this->db->from('tbl_siswa_baru');
+        $this->db->from('tbl_siswa');
         $config['total_rows'] = $this->db->count_all_results();
-        // $config['total_rows'] = $this->Model_siswa_baru->countAllSiswaBaru();
+        // $config['total_rows'] = $this->Model_siswa->countAllSiswa();
         $data['total_rows'] = $config['total_rows'];
         $config['per_page'] = 5;
 
@@ -51,7 +50,7 @@ class Siswa extends CI_Controller
 
         $data['start'] = $this->uri->segment(3);
 
-        $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaruLimit($config['per_page'], $data['start'], $data['keyword']);
+        $data['tbl_siswa'] = $this->Model_siswa->getSiswaLimit($config['per_page'], $data['start'], $data['keyword']);
 
 
         $this->load->view('templates/admin/header', $data);
@@ -88,7 +87,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
         $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
 
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_siswa_baru.email]', [
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_siswa.email]', [
             'is_unique' => 'Email sudah terdaftar!'
         ]);
 
@@ -103,7 +102,7 @@ class Siswa extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
-            $data['title'] = 'Tambah Data Siswa Baru';
+            $data['title'] = 'Tambah Data Siswa';
 
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
@@ -111,10 +110,10 @@ class Siswa extends CI_Controller
             $this->load->view('siswa/add', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            $this->db->select('RIGHT(tbl_siswa_baru.kode_pendaftaran,4) as kode', false);
-            $this->db->order_by('kode_pendaftaran', 'DESC');
+            $this->db->select('RIGHT(tbl_siswa.nis,4) as kode', false);
+            $this->db->order_by('nis', 'DESC');
             $this->db->limit(1);
-            $query = $this->db->get('tbl_siswa_baru'); // cek sudah ada atau belum kodenya
+            $query = $this->db->get('tbl_siswa'); // cek sudah ada atau belum kodenya
             if ($query->num_rows() <> 0) {
                 //jika kodenya sudah ada.      
                 $data = $query->row();
@@ -133,19 +132,19 @@ class Siswa extends CI_Controller
             $fixkode = $thn . $kodemax;
             // $fixkode = $thn . "-ppdb-" . $bln . $kodemax;
 
-            $this->Model_user->addSiswaBaru($fixkode);
+            $this->Model_user->addSiswa($fixkode);
 
             $this->session->set_flashdata('flash', 'ditambahkan');
             redirect('siswa');
         }
     }
 
-    public function detail($kode_pendaftaran)
+    public function detail($nis)
     {
 
         $data['tbl_user'] = $this->Model_user->getAdmin();
-        $data['title'] = 'Detail Data Siswa Baru';
-        $data['tbl_siswa_baru'] = $this->Model_user->getSiswaBaruId($kode_pendaftaran);
+        $data['title'] = 'Detail Data Siswa';
+        $data['tbl_siswa'] = $this->Model_user->getSiswaId($nis);
 
         $this->load->view('templates/admin/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
@@ -155,7 +154,7 @@ class Siswa extends CI_Controller
     }
 
 
-    public function edit($kode_pendaftaran)
+    public function edit($nis)
     {
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -195,8 +194,8 @@ class Siswa extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
-            $data['title'] = 'Edit Data Siswa Baru';
-            $data['tbl_siswa_baru'] = $this->Model_user->getSiswaBaruId($kode_pendaftaran);
+            $data['title'] = 'Edit Data Siswa';
+            $data['tbl_siswa'] = $this->Model_user->getSiswaId($nis);
 
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
@@ -204,7 +203,7 @@ class Siswa extends CI_Controller
             $this->load->view('siswa/edit', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            $this->Model_user->editSiswaBaru();
+            $this->Model_user->editSiswa();
             $this->session->set_flashdata('flash', 'diupdate');
             redirect('siswa');
         }

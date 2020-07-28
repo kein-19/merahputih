@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-sm-12">
 
-            <!-- Daftar Calon Siswa -->
+            <!-- Daftar Siswa -->
 
             <div class="col-sm-12 mx-auto">
 
@@ -15,7 +15,7 @@
 
                 <div class="row mt-3 mb-2">
                     <div class="col-md-4">
-                        <a href="<?= base_url('siswa/add'); ?>" class="btn btn-primary">Tambah Data Calon Siswa Baru</a>
+                        <a href="<?= base_url('siswa/add'); ?>" class="btn btn-primary">Tambah Data Siswa</a>
                     </div>
 
                     <div class="col-md-2">
@@ -42,16 +42,14 @@
                         <tr>
                             <th scope="col" class="align-middle text-center">No</th>
                             <th scope="col" class="align-middle">Nomor Formulir</th>
-                            <th scope="col" class="align-middle">Nama Calon Siswa</th>
-                            <th scope="col" class="align-middle">Asal Sekolah</th>
+                            <th scope="col" class="align-middle">Nama Siswa</th>
                             <th scope="col" class="align-middle">Email</th>
-                            <th scope="col" class="align-middle">Validasi</th>
                             <th scope="col" class="align-middle text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        <?php if (empty($tbl_siswa_baru)) : ?>
+                        <?php if (empty($tbl_siswa)) : ?>
                             <tr>
                                 <td colspan="7">
                                     <div class="alert alert-danger" role="alert">
@@ -61,26 +59,20 @@
                             </tr>
                         <?php endif; ?>
 
-                        <?php foreach ($tbl_siswa_baru as $sb) : ?>
+                        <?php foreach ($tbl_siswa as $sb) : ?>
 
                             <tr>
                                 <th class="align-middle text-center" scope="row"><?= ++$start; ?></th>
-                                <td class="align-middle"><?= $sb['kode_pendaftaran']; ?></td>
+                                <td class="align-middle"><?= $sb['nis']; ?></td>
                                 <td class="align-middle"><?= $sb['nama']; ?></td>
-                                <td class="align-middle"><?= $sb['asal_sekolah']; ?></td>
                                 <td class="align-middle"><?= $sb['email']; ?></td>
-                                <td class="align-middle">
-                                    <?php if ($sb['validasi'] == 'Sudah') : ?>
-                                        <span class="align-middle text-success"><i class="fas fa-fw fa-check"></i> Sudah</span>
-                                    <?php elseif ($sb['validasi'] == 'Belum') : ?>
-                                        <span class="align-middle text-danger"><i class="fas fa-fw fa-exclamation"></i> Belum</span>
-                                    <?php endif; ?>
+
                                 </td>
                                 <td class="align-middle text-center">
-                                    <h4><a href="<?= base_url('siswa/detail/') . $sb['kode_pendaftaran']; ?>" class="badge badge-secondary" role="button" title="detail"><i class="far fa-fw fa-id-card"></i></a>
-                                        <a href="<?= base_url('siswa/edit/') . $sb['kode_pendaftaran']; ?>" class="badge badge-primary" role="button" title="edit"><i class="fas fa-fw fa-edit"></i></a>
-                                        <a href="<?= base_url('printdoc/data/') . $sb['kode_pendaftaran']; ?>" class="badge badge-success" role="button" target="blank" title="print"><i class="fas fa-fw fa-print"></i></a>
-                                        <a href="<?= base_url('siswa/delete/') . $sb['kode_pendaftaran']; ?>" class="badge badge-danger tombol-hapus" role="button" title="delete"><i class="fas fa-fw fa-trash"></i></a></h4>
+                                    <h4><a href="<?= base_url('siswa/detail/') . $sb['nis']; ?>" class="badge badge-secondary" role="button" title="detail"><i class="far fa-fw fa-id-card"></i></a>
+                                        <a href="<?= base_url('siswa/edit/') . $sb['nis']; ?>" class="badge badge-primary" role="button" title="edit"><i class="fas fa-fw fa-edit"></i></a>
+                                        <a href="<?= base_url('printdoc/data/') . $sb['nis']; ?>" class="badge badge-success" role="button" target="blank" title="print"><i class="fas fa-fw fa-print"></i></a>
+                                        <a href="<?= base_url('siswa/delete/') . $sb['nis']; ?>" class="badge badge-danger tombol-hapus" role="button" title="delete"><i class="fas fa-fw fa-trash"></i></a></h4>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

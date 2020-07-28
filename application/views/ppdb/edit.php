@@ -30,7 +30,7 @@
                                         0 => 'Belum',
                                         1 => 'Sudah'
                                     );
-                                    $pilih = $tbl_siswa['is_active'];
+                                    $pilih = $tbl_datappdb['is_active'];
                                     echo form_dropdown(
                                         'is_active',
                                         $is_active,
@@ -39,9 +39,9 @@
                                     );
                                     ?>
                                 </div>
-                                <?php if ($tbl_siswa['is_active'] == 1) : ?>
+                                <?php if ($tbl_datappdb['is_active'] == 1) : ?>
                                     <i class="col-form-label col-form-label-sm text-success fas fa-check"></i>
-                                <?php elseif ($tbl_siswa['is_active'] == 0) : ?>
+                                <?php elseif ($tbl_datappdb['is_active'] == 0) : ?>
                                     <i class="col-form-label col-form-label-sm text-danger fas fa-exclamation"></i>
                                 <?php endif; ?>
                             </div>
@@ -51,7 +51,7 @@
                                     Nomor Formulir
                                 </label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm form-control form-control-sm" id="kode_pendaftaran" name="kode_pendaftaran" value="<?= $tbl_siswa['kode_pendaftaran']; ?>" readonly>
+                                    <input type="text" class="form-control form-control-sm form-control form-control-sm" id="kode_pendaftaran" name="kode_pendaftaran" value="<?= $tbl_datappdb['kode_pendaftaran']; ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -59,7 +59,7 @@
                                     Nama Lengkap
                                 </label>
                                 <div class="col-sm-4">
-                                    <input type="text" name="nama" placeholder="Masukkan Nama Lengkap" id="nama" class="form-control form-control-sm" value="<?= $tbl_siswa['nama']; ?>">
+                                    <input type="text" name="nama" placeholder="Masukkan Nama Lengkap" id="nama" class="form-control form-control-sm" value="<?= $tbl_datappdb['nama']; ?>">
                                 </div>
                                 <?= form_error('nama', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                             </div>
@@ -68,10 +68,10 @@
                                     Tempat Tanggal Lahir
                                 </label>
                                 <div class="col-sm-4">
-                                    <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" id="tempat_lahir" class="form-control form-control-sm" value="<?= $tbl_siswa['tempat_lahir']; ?>">
+                                    <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" id="tempat_lahir" class="form-control form-control-sm" value="<?= $tbl_datappdb['tempat_lahir']; ?>">
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="date" name="tanggal_lahir" placeholder="Tanggal Lahir" id="tanggal_lahir" class="form-control form-control-sm" value="<?= $tbl_siswa['tanggal_lahir']; ?>">
+                                    <input type="date" name="tanggal_lahir" placeholder="Tanggal Lahir" id="tanggal_lahir" class="form-control form-control-sm" value="<?= $tbl_datappdb['tanggal_lahir']; ?>">
                                 </div>
                                 <?= form_error('tempat_lahir', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3 col-sm-4">', '</small>'); ?>
                                 <?= form_error('tanggal_lahir', '<small class="text-danger pl-3 col-sm-3 align-items-sm-end">', '</small>'); ?>
@@ -87,7 +87,7 @@
                                         'L' => 'Laki-laki',
                                         'P' => 'Perempuan'
                                     );
-                                    $pilih = $tbl_siswa['jenis_kelamin'];
+                                    $pilih = $tbl_datappdb['jenis_kelamin'];
                                     echo form_dropdown(
                                         'jenis_kelamin',
                                         $jenis_kelamin,
@@ -114,7 +114,7 @@
                                         '06' => 'Konghucu',
                                         '99' => 'Lain-lain'
                                     );
-                                    $pilih = $tbl_siswa['kd_agama'];
+                                    $pilih = $tbl_datappdb['kd_agama'];
                                     echo form_dropdown(
                                         'agama',
                                         $agama,
@@ -138,7 +138,7 @@
                                         'WNI' => 'Warga Negara Indonesia',
                                         'WNA' => 'Warga Negara Asing'
                                     );
-                                    $pilih = $tbl_siswa['warganegara'];;
+                                    $pilih = $tbl_datappdb['warganegara'];;
                                     echo form_dropdown(
                                         'warganegara',
                                         $warganegara,
@@ -164,7 +164,7 @@
                                         'Tiri' => 'Tiri',
                                         'Angkat' => 'Angkat'
                                     );
-                                    $pilih = $tbl_siswa['statussiswa'];
+                                    $pilih = $tbl_datappdb['statussiswa'];
                                     echo form_dropdown(
                                         'statussiswa',
                                         $statussiswa,
@@ -181,13 +181,13 @@
                                     Anak ke
                                 </label>
                                 <div class="col-sm-1">
-                                    <input type="text" name="anak_ke" id="anak_ke" class="form-control form-control-sm" value="<?= $tbl_siswa['anak_ke']; ?>">
+                                    <input type="text" name="anak_ke" id="anak_ke" class="form-control form-control-sm" value="<?= $tbl_datappdb['anak_ke']; ?>">
                                 </div>
                                 <label class="col-sm-2 col-form-label col-form-label-sm" for="anak_ke">
                                     dari
                                 </label>
                                 <div class="col-sm-1">
-                                    <input type="text" name="dari__bersaudara" id="dari__bersaudara" class="form-control form-control-sm" value="<?= $tbl_siswa['dari__bersaudara']; ?>">
+                                    <input type="text" name="dari__bersaudara" id="dari__bersaudara" class="form-control form-control-sm" value="<?= $tbl_datappdb['dari__bersaudara']; ?>">
                                 </div>
                                 <label class="col-sm-3 col-form-label col-form-label-sm" for="dari__bersaudara">
                                     saudara
@@ -200,7 +200,7 @@
                                     Jumlah Saudara
                                 </label>
                                 <div class="col-sm-1">
-                                    <input type="text" name="jumlah_saudara" id="jumlah_saudara" class="form-control form-control-sm" value="<?= $tbl_siswa['jumlah_saudara']; ?>">
+                                    <input type="text" name="jumlah_saudara" id="jumlah_saudara" class="form-control form-control-sm" value="<?= $tbl_datappdb['jumlah_saudara']; ?>">
                                 </div>
                                 <label class="col-sm-6 col-form-label col-form-label-sm" for="jumlah_saudara">
                                     orang
@@ -212,7 +212,7 @@
                                     E-mail
                                 </label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control form-control-sm form-control form-control-sm" id="email" name="email" placeholder="E-mail" value="<?= $tbl_siswa['email']; ?>" readonly>
+                                    <input type="text" class="form-control form-control-sm form-control form-control-sm" id="email" name="email" placeholder="E-mail" value="<?= $tbl_datappdb['email']; ?>" readonly>
                                 </div>
                             </div>
 
@@ -221,10 +221,10 @@
                         <!-- Image -->
                         <div class="col-sm-3">
                             <!-- <div class="card float-md-right p-md-2">
-                                <img src="<?= base_url('assets/img/profile/') . $tbl_siswa['image']; ?>" class="card-img rounded mx-auto d-block" style="width: 100px">
+                                <img src="<?= base_url('assets/img/profile/') . $tbl_datappdb['image']; ?>" class="card-img rounded mx-auto d-block" style="width: 100px">
                             </div> -->
                             <div class="row">
-                                <img src="<?= base_url('assets/img/profile/') . $tbl_siswa['image']; ?>" class="img-thumbnail mb-sm-3 p-sm-2">
+                                <img src="<?= base_url('assets/img/profile/') . $tbl_datappdb['image']; ?>" class="img-thumbnail mb-sm-3 p-sm-2">
                                 <div class="custom-file col-form-label col-form-label-sm">
                                     <input type="file" class="custom-file-input" id="image" name="image">
                                     <label class="custom-file-label" for="image">Choose file</label>
@@ -240,7 +240,7 @@
                             Alamat
                         </label>
                         <div class="col-sm-7">
-                            <input name="alamat" id="alamat" class="form-control form-control-sm" value="<?= $tbl_siswa['alamat']; ?>"></input>
+                            <input name="alamat" id="alamat" class="form-control form-control-sm" value="<?= $tbl_datappdb['alamat']; ?>"></input>
                         </div>
                         <?= form_error('alamat', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -249,10 +249,10 @@
                             RT / RW
                         </label>
                         <div class="col-sm-3">
-                            <input type="text" name="rt" placeholder="RT" id="rt" class="form-control form-control-sm" value="<?= $tbl_siswa['rt']; ?>">
+                            <input type="text" name="rt" placeholder="RT" id="rt" class="form-control form-control-sm" value="<?= $tbl_datappdb['rt']; ?>">
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" name="rw" placeholder="RW" id="rw" class="form-control form-control-sm" value="<?= $tbl_siswa['rw']; ?>">
+                            <input type="text" name="rw" placeholder="RW" id="rw" class="form-control form-control-sm" value="<?= $tbl_datappdb['rw']; ?>">
                         </div>
                         <?= form_error('rt', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3 col-sm-3">', '</small>'); ?>
                         <?= form_error('rw', '<small class="text-danger pl-3 col-sm-3 align-items-sm-end">', '</small>'); ?>
@@ -262,7 +262,7 @@
                             Kelurahan / Desa
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="kelurahan" placeholder="Kelurahan / Desa" id="kelurahan" class="form-control form-control-sm" value="<?= $tbl_siswa['kelurahan']; ?>">
+                            <input type="text" name="kelurahan" placeholder="Kelurahan / Desa" id="kelurahan" class="form-control form-control-sm" value="<?= $tbl_datappdb['kelurahan']; ?>">
                         </div>
                         <?= form_error('kelurahan', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -271,7 +271,7 @@
                             Kecamatan
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="kecamatan" placeholder="Kecamatan" id="kecamatan" class="form-control form-control-sm" value="<?= $tbl_siswa['kecamatan']; ?>">
+                            <input type="text" name="kecamatan" placeholder="Kecamatan" id="kecamatan" class="form-control form-control-sm" value="<?= $tbl_datappdb['kecamatan']; ?>">
                         </div>
                         <?= form_error('kecamatan', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -280,7 +280,7 @@
                             No. HP
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="no_hp" placeholder="Nomor HP" id="no_hp" class="form-control form-control-sm" value="<?= $tbl_siswa['no_hp']; ?>">
+                            <input type="text" name="no_hp" placeholder="Nomor HP" id="no_hp" class="form-control form-control-sm" value="<?= $tbl_datappdb['no_hp']; ?>">
                         </div>
                         <?= form_error('no_hp', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -297,7 +297,7 @@
                                 'Orang lain' => 'Orang lain',
                                 'Asrama' => 'Asrama'
                             );
-                            $pilih = $tbl_siswa['tinggalbersama'];;
+                            $pilih = $tbl_datappdb['tinggalbersama'];;
                             echo form_dropdown(
                                 'tinggalbersama',
                                 $tinggalbersama,
@@ -314,7 +314,7 @@
                             Jarak Rumah ke Sekolah
                         </label>
                         <div class="col-sm-1">
-                            <input type="text" name="jarak" id="jarak" class="form-control form-control-sm" value="<?= $tbl_siswa['jarak']; ?>">
+                            <input type="text" name="jarak" id="jarak" class="form-control form-control-sm" value="<?= $tbl_datappdb['jarak']; ?>">
                         </div>
                         <label class="col-sm-2 col-form-label col-form-label-sm" for="jarak">
                             km
@@ -333,7 +333,7 @@
                                 'Kendaraan Pribadi' => 'Kendaraan Pribadi',
                                 'Jalan Kaki' => 'Jalan Kaki'
                             );
-                            $pilih = $tbl_siswa['transport'];;
+                            $pilih = $tbl_datappdb['transport'];;
                             echo form_dropdown(
                                 'transport',
                                 $transport,
@@ -358,7 +358,7 @@
                                 'AP' => 'Administrasi Perkantoran',
                                 'TKJ' => 'Teknik Komputer dan Jaringan'
                             );
-                            $pilih = $tbl_siswa['jurusan'];
+                            $pilih = $tbl_datappdb['jurusan'];
                             echo form_dropdown(
                                 'jurusan',
                                 $jurusan,
@@ -377,7 +377,7 @@
                             SMP/MTs
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="asal_sekolah" placeholder="SMP/MTs" id="asal_sekolah" class="form-control form-control-sm" value="<?= $tbl_siswa['asal_sekolah']; ?>">
+                            <input type="text" name="asal_sekolah" placeholder="SMP/MTs" id="asal_sekolah" class="form-control form-control-sm" value="<?= $tbl_datappdb['asal_sekolah']; ?>">
                         </div>
                         <?= form_error('asal_sekolah', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -386,7 +386,7 @@
                             Nomor Induk Siswa Nasional (NISN)
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="nisn" placeholder="Nomor Induk Siswa Nasional (NISN)" id="nisn" class="form-control form-control-sm" value="<?= $tbl_siswa['nisn']; ?>">
+                            <input type="text" name="nisn" placeholder="Nomor Induk Siswa Nasional (NISN)" id="nisn" class="form-control form-control-sm" value="<?= $tbl_datappdb['nisn']; ?>">
                         </div>
                         <?= form_error('nisn', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3 col-sm-7">', '</small>'); ?>
                     </div>
@@ -395,7 +395,7 @@
                             Tanggal/Tahun/No.STTB
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="no_sttb" placeholder="Tanggal/Tahun/No.STTB" id="no_sttb" class="form-control form-control-sm" value="<?= $tbl_siswa['no_sttb']; ?>">
+                            <input type="text" name="no_sttb" placeholder="Tanggal/Tahun/No.STTB" id="no_sttb" class="form-control form-control-sm" value="<?= $tbl_datappdb['no_sttb']; ?>">
                         </div>
                         <label class="col-sm-2 col-form-label col-form-label-sm" for="no_sttb">
                             tahun
@@ -408,7 +408,7 @@
                             Dari Sekolah
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="pindahan" placeholder="Asal Sekolah" id="pindahan" class="form-control form-control-sm" value="<?= $tbl_siswa['pindahan']; ?>">
+                            <input type="text" name="pindahan" placeholder="Asal Sekolah" id="pindahan" class="form-control form-control-sm" value="<?= $tbl_datappdb['pindahan']; ?>">
                         </div>
                         <?= form_error('pindahan', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -423,7 +423,7 @@
                                 'Ada' => 'Ada',
                                 'Tidak' => 'Tidak'
                             );
-                            $pilih = $tbl_siswa['suratpindah'];
+                            $pilih = $tbl_datappdb['suratpindah'];
                             echo form_dropdown(
                                 'suratpindah',
                                 $suratpindah,
@@ -438,7 +438,7 @@
                             Alasan Pindah
                         </label>
                         <div class="col-sm-5">
-                            <input type="text" name="alasan" placeholder="Alasan Pindah" id="alasan" class="form-control form-control-sm" value="<?= $tbl_siswa['alasan']; ?>">
+                            <input type="text" name="alasan" placeholder="Alasan Pindah" id="alasan" class="form-control form-control-sm" value="<?= $tbl_datappdb['alasan']; ?>">
                             <?= form_error('alasan', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                         </div>
                     </div>
@@ -451,7 +451,7 @@
                             Nama Orang Tua/Wali
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="nama_ot" placeholder="Masukkan Nama Orang Tua/Wali" id="nama_ot" class="form-control form-control-sm" value="<?= $tbl_siswa['nama_ot']; ?>">
+                            <input type="text" name="nama_ot" placeholder="Masukkan Nama Orang Tua/Wali" id="nama_ot" class="form-control form-control-sm" value="<?= $tbl_datappdb['nama_ot']; ?>">
                         </div>
                         <?= form_error('nama_ot', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -461,7 +461,7 @@
                             Alamat Orang Tua/Wali
                         </label>
                         <div class="col-sm-7">
-                            <input name="alamat_ot" id="alamat_ot" class="form-control form-control-sm" value="<?= $tbl_siswa['alamat_ot']; ?>"></input>
+                            <input name="alamat_ot" id="alamat_ot" class="form-control form-control-sm" value="<?= $tbl_datappdb['alamat_ot']; ?>"></input>
                         </div>
                         <?= form_error('alamat_ot', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -471,7 +471,7 @@
                             No. HP
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="no_hp_ot" placeholder="Nomor HP" id="no_hp_ot" class="form-control form-control-sm" value="<?= $tbl_siswa['no_hp_ot']; ?>">
+                            <input type="text" name="no_hp_ot" placeholder="Nomor HP" id="no_hp_ot" class="form-control form-control-sm" value="<?= $tbl_datappdb['no_hp_ot']; ?>">
                         </div>
                         <?= form_error('no_hp_ot', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -481,7 +481,7 @@
                             Pendidikan Terakhir
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="pendidikan_ot" placeholder="Pendidikan Terakhir" id="pendidikan_ot" class="form-control form-control-sm" value="<?= $tbl_siswa['pendidikan_ot']; ?>">
+                            <input type="text" name="pendidikan_ot" placeholder="Pendidikan Terakhir" id="pendidikan_ot" class="form-control form-control-sm" value="<?= $tbl_datappdb['pendidikan_ot']; ?>">
                         </div>
                         <?= form_error('pendidikan_ot', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -491,7 +491,7 @@
                             Pekerjaan
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="pekerjaan_ot" placeholder="Pekerjaan" id="pekerjaan_ot" class="form-control form-control-sm" value="<?= $tbl_siswa['pekerjaan_ot']; ?>">
+                            <input type="text" name="pekerjaan_ot" placeholder="Pekerjaan" id="pekerjaan_ot" class="form-control form-control-sm" value="<?= $tbl_datappdb['pekerjaan_ot']; ?>">
                         </div>
                         <?= form_error('pekerjaan_ot', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
@@ -501,7 +501,7 @@
                             Penghasilan
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="penghasilan_ot" placeholder="Penghasilan" id="penghasilan_ot" class="form-control form-control-sm" value="<?= $tbl_siswa['penghasilan_ot']; ?>">
+                            <input type="text" name="penghasilan_ot" placeholder="Penghasilan" id="penghasilan_ot" class="form-control form-control-sm" value="<?= $tbl_datappdb['penghasilan_ot']; ?>">
                         </div>
                         <?= form_error('penghasilan_ot', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>

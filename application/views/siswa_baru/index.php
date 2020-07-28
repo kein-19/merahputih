@@ -8,7 +8,7 @@
             <div class="d-block p-2 bg-light">
                 <div class="porlets-content mt-sm-3">
                     <h1 class="h4 mb-sm-3">Yth Saudara/i.
-                        <?php echo strtoupper($tbl_siswa_baru['nama']) ?>
+                        <?php echo strtoupper($tbl_datappdb['nama']) ?>
                     </h1>
 
                     <p class="mb-0">Selamat, Anda telah berhasil melakukan Pengisian Formulir.</p>
