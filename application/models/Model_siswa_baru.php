@@ -59,21 +59,21 @@ class Model_siswa_baru extends CI_Model
 
                 $this->session->set_userdata($data);
                 // if ($siswa_baru['role_id'] == 1) {
-                //     redirect('siswa_baru');
+                //     redirect('user');
                 // } else {
-                redirect('siswa_baru');
+                redirect('user');
                 // }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Anda Salah!</div>');
-                redirect('psb/login');
+                redirect('ppdb/login');
             }
             // } else {
             //     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Mohon maaf akun anda belum diaktivasi!</div>');
-            //     redirect('psb/login');
+            //     redirect('ppdb/login');
             // }
         } else {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Nomor Formulir belum terdaftar</div>');
-            redirect('psb/login');
+            redirect('ppdb/login');
         }
     }
 

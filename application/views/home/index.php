@@ -52,7 +52,7 @@
           <li class="lead font-weight-normal mt-3">Buka Website SMK MERAH PUTIH</li>
           <a href="https://www.smkmerahputih.net" class="text-white font-weight-light">https://www.smkmerahputih.net</a>
           <li class="lead font-weight-normal mt-3">Isi Formulir</li>
-          <p class="font-weight-light mb-0">Klik PSB ONLINE</p>
+          <p class="font-weight-light mb-0">Klik PPDB ONLINE</p>
           <p class="font-weight-light mb-0">Isi Formulir Pendaftaran untuk dapat menerima akses masuk ke tahap selanjutnya</p>
           <li class="lead font-weight-normal mt-3">Login Siswa</li>
           <p class="font-weight-light mb-0">Jika pengisian berhasil anda akan menerima nomor formulir / kode pendaftaran</p>
@@ -164,8 +164,8 @@
 
     <div class="row justify-content-center">
       <div class="btn-group btn-block col-lg-5" role="group" aria-label="Basic example">
-        <a href=" <?= base_url('psb'); ?>" class="btn btn-success" role="button">Daftar</a>
-        <a href="<?= base_url('psb/login'); ?>" class="btn btn-primary" role="button">Login</a>
+        <a href=" <?= base_url('ppdb'); ?>" class="btn btn-success" role="button">Daftar</a>
+        <a href="<?= base_url('ppdb/login'); ?>" class="btn btn-primary" role="button">Login</a>
       </div>
     </div>
 

@@ -14,12 +14,13 @@ class Menu extends CI_Controller
     public function index()
     {
         $data['title'] = 'Menu Management';
-        $data['tbl_siswa_baru'] = $this->db->get_where('tbl_siswa_baru', ['email' => $this->session->userdata('email')])->row_array();
+        // $data['tbl_siswa_baru'] = $this->db->get_where('tbl_siswa_baru', ['email' => $this->session->userdata('email')])->row_array();
 
-        $this->db->where('id !=', 3);
+        // $this->db->where('id !=', 3);
         $data['menu'] = $this->db->get('t_user_menu')->result_array();
 
         $this->form_validation->set_rules('menu', 'Menu', 'required');
+        $this->form_validation->set_rules('menu_icon', 'Menu Icon', 'required');
 
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
@@ -30,7 +31,11 @@ class Menu extends CI_Controller
             $this->load->view('menu/index', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            $this->db->insert('t_user_menu', ['menu' => $this->input->post('menu')]);
+            $data = [
+                'menu'      => $this->input->post('menu'),
+                'menu_icon' => $this->input->post('menu_icon')
+            ];
+            $this->db->insert('t_user_menu', $data);
             $this->session->set_flashdata('flash', 'ditambahkan');
             redirect('menu');
         }
@@ -62,7 +67,9 @@ class Menu extends CI_Controller
         } else {
             // $this->db->insert('t_user_menu', ['menu' => $this->input->post('menu')]);
             $data = [
-                'menu' => $this->input->post('menu')
+                'menu'      => $this->input->post('menu'),
+                'menu_icon' => $this->input->post('menu_icon')
+
             ];
             $this->db->where('id', $this->input->post('id'));
             $this->db->update('t_user_menu', $data);

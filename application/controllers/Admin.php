@@ -65,161 +65,161 @@ class Admin extends CI_Controller
         $this->load->view('templates/admin/footer');
     }
 
-    public function add()
-    {
-        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+    // public function add()
+    // {
+    //     $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 
-        $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
-        $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
-        $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
-        $this->form_validation->set_rules('agama', 'Agama', 'required');
-        $this->form_validation->set_rules('warganegara', 'Kewarganegaraan', 'required');
-        $this->form_validation->set_rules('statussiswa', 'Status Siswa', 'required');
-        $this->form_validation->set_rules('anak_ke', 'Anak ke', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('dari__bersaudara', 'dari bersaudara', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('jumlah_saudara', 'Jumlah Saudara', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
-        $this->form_validation->set_rules('rt', 'RT', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('rw', 'RW', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('kelurahan', 'Kelurahan / Desa', 'required|trim');
-        $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required|trim');
-        $this->form_validation->set_rules('no_hp', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
-        $this->form_validation->set_rules('tinggalbersama', 'Tinggal Bersama dengan', 'required');
-        $this->form_validation->set_rules('jarak', 'Jarak Rumah ke Sekolah', 'required|trim|numeric');
-        $this->form_validation->set_rules('transport', 'Ke Sekolah dengan', 'required');
-        $this->form_validation->set_rules('jurusan', 'Kompetensi Keahlian', 'required');
-        $this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required|trim');
-        $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
-        $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
+    //     $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
+    //     $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
+    //     $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
+    //     $this->form_validation->set_rules('agama', 'Agama', 'required');
+    //     $this->form_validation->set_rules('warganegara', 'Kewarganegaraan', 'required');
+    //     $this->form_validation->set_rules('statussiswa', 'Status Siswa', 'required');
+    //     $this->form_validation->set_rules('anak_ke', 'Anak ke', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('dari__bersaudara', 'dari bersaudara', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('jumlah_saudara', 'Jumlah Saudara', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+    //     $this->form_validation->set_rules('rt', 'RT', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('rw', 'RW', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('kelurahan', 'Kelurahan / Desa', 'required|trim');
+    //     $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required|trim');
+    //     $this->form_validation->set_rules('no_hp', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
+    //     $this->form_validation->set_rules('tinggalbersama', 'Tinggal Bersama dengan', 'required');
+    //     $this->form_validation->set_rules('jarak', 'Jarak Rumah ke Sekolah', 'required|trim|numeric');
+    //     $this->form_validation->set_rules('transport', 'Ke Sekolah dengan', 'required');
+    //     $this->form_validation->set_rules('jurusan', 'Kompetensi Keahlian', 'required');
+    //     $this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required|trim');
+    //     $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
+    //     $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
 
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_siswa_baru.email]', [
-            'is_unique' => 'Email sudah terdaftar!'
-        ]);
+    //     $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_siswa_baru.email]', [
+    //         'is_unique' => 'Email sudah terdaftar!'
+    //     ]);
 
-        // Data Orang Tua Siswa
-        $this->form_validation->set_rules('nama_ot', 'Nama Orang Tua/Wali', 'required|trim');
-        $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
-        $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
-        $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');
-        $this->form_validation->set_rules('pekerjaan_ot', 'Pekerjaan', 'required|trim');
-        $this->form_validation->set_rules('penghasilan_ot', 'Penghasilan', 'required|trim|numeric');
-
-
-        if ($this->form_validation->run() == false) {
-            $data['tbl_user'] = $this->Model_user->getAdmin();
-            $data['title'] = 'Tambah Data Siswa Baru';
-
-            $this->load->view('templates/admin/header', $data);
-            $this->load->view('templates/admin/sidebar', $data);
-            $this->load->view('templates/admin/topbar', $data);
-            $this->load->view('admin/add', $data);
-            $this->load->view('templates/admin/footer');
-        } else {
-            $this->db->select('RIGHT(tbl_siswa_baru.kode_pendaftaran,4) as kode', false);
-            $this->db->order_by('kode_pendaftaran', 'DESC');
-            $this->db->limit(1);
-            $query = $this->db->get('tbl_siswa_baru'); // cek sudah ada atau belum kodenya
-            if ($query->num_rows() <> 0) {
-                //jika kodenya sudah ada.      
-                $data = $query->row();
-                $kode = intval($data->kode) + 1;
-            } else {
-                //jika kodenya belum ada      
-                $kode = 1;
-            }
-
-            // siapkan kode
-            // $thn = substr(date('Y'), 2, 2) . "-" . substr(date('Y', strtotime('+1 years')), 2, 2);
-            $thn = substr(date('Y'), 2, 2) . substr(date('Y', strtotime('+1 years')), 2, 2);
-            // $bln = date('md');
-            // $kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
-            $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
-            $fixkode = $thn . $kodemax;
-            // $fixkode = $thn . "-PSB-" . $bln . $kodemax;
-
-            $this->Model_user->addSiswaBaru($fixkode);
-
-            $this->session->set_flashdata('flash', 'ditambahkan');
-            redirect('admin');
-        }
-    }
-
-    public function detail($kode_pendaftaran)
-    {
-
-        $data['tbl_user'] = $this->Model_user->getAdmin();
-        $data['title'] = 'Detail Data Siswa Baru';
-        $data['tbl_siswa_baru'] = $this->Model_user->getSiswaBaruId($kode_pendaftaran);
-
-        $this->load->view('templates/admin/header', $data);
-        $this->load->view('templates/admin/sidebar', $data);
-        $this->load->view('templates/admin/topbar', $data);
-        $this->load->view('admin/detail', $data);
-        $this->load->view('templates/admin/footer');
-    }
+    //     // Data Orang Tua Siswa
+    //     $this->form_validation->set_rules('nama_ot', 'Nama Orang Tua/Wali', 'required|trim');
+    //     $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
+    //     $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
+    //     $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');
+    //     $this->form_validation->set_rules('pekerjaan_ot', 'Pekerjaan', 'required|trim');
+    //     $this->form_validation->set_rules('penghasilan_ot', 'Penghasilan', 'required|trim|numeric');
 
 
-    public function edit($kode_pendaftaran)
-    {
+    //     if ($this->form_validation->run() == false) {
+    //         $data['tbl_user'] = $this->Model_user->getAdmin();
+    //         $data['title'] = 'Tambah Data Siswa Baru';
 
-        $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+    //         $this->load->view('templates/admin/header', $data);
+    //         $this->load->view('templates/admin/sidebar', $data);
+    //         $this->load->view('templates/admin/topbar', $data);
+    //         $this->load->view('admin/add', $data);
+    //         $this->load->view('templates/admin/footer');
+    //     } else {
+    //         $this->db->select('RIGHT(tbl_siswa_baru.kode_pendaftaran,4) as kode', false);
+    //         $this->db->order_by('kode_pendaftaran', 'DESC');
+    //         $this->db->limit(1);
+    //         $query = $this->db->get('tbl_siswa_baru'); // cek sudah ada atau belum kodenya
+    //         if ($query->num_rows() <> 0) {
+    //             //jika kodenya sudah ada.      
+    //             $data = $query->row();
+    //             $kode = intval($data->kode) + 1;
+    //         } else {
+    //             //jika kodenya belum ada      
+    //             $kode = 1;
+    //         }
 
-        $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
-        $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
-        $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
-        $this->form_validation->set_rules('agama', 'Agama', 'required');
-        $this->form_validation->set_rules('warganegara', 'Kewarganegaraan', 'required');
-        $this->form_validation->set_rules('statussiswa', 'Status Siswa', 'required');
-        $this->form_validation->set_rules('anak_ke', 'Anak ke', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('dari__bersaudara', 'dari bersaudara', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('jumlah_saudara', 'Jumlah Saudara', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
-        $this->form_validation->set_rules('rt', 'RT', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('rw', 'RW', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('kelurahan', 'Kelurahan / Desa', 'required|trim');
-        $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required|trim');
-        $this->form_validation->set_rules('no_hp', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
-        $this->form_validation->set_rules('tinggalbersama', 'Tinggal Bersama dengan', 'required');
-        $this->form_validation->set_rules('jarak', 'Jarak Rumah ke Sekolah', 'required|trim|numeric');
-        $this->form_validation->set_rules('transport', 'Ke Sekolah dengan', 'required');
-        $this->form_validation->set_rules('jurusan', 'Kompetensi Keahlian', 'required');
-        $this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required|trim');
-        $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
-        $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
+    //         // siapkan kode
+    //         // $thn = substr(date('Y'), 2, 2) . "-" . substr(date('Y', strtotime('+1 years')), 2, 2);
+    //         $thn = substr(date('Y'), 2, 2) . substr(date('Y', strtotime('+1 years')), 2, 2);
+    //         // $bln = date('md');
+    //         // $kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
+    //         $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT);
+    //         $fixkode = $thn . $kodemax;
+    //         // $fixkode = $thn . "-ppdb-" . $bln . $kodemax;
 
-        $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+    //         $this->Model_user->addSiswaBaru($fixkode);
 
-        // Data Orang Tua Siswa
-        $this->form_validation->set_rules('nama_ot', 'Nama Orang Tua/Wali', 'required|trim');
-        $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
-        $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
-        $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');
-        $this->form_validation->set_rules('pekerjaan_ot', 'Pekerjaan', 'required|trim');
-        $this->form_validation->set_rules('penghasilan_ot', 'Penghasilan', 'required|trim|numeric');
+    //         $this->session->set_flashdata('flash', 'ditambahkan');
+    //         redirect('admin');
+    //     }
+    // }
 
-        if ($this->form_validation->run() == false) {
-            $data['tbl_user'] = $this->Model_user->getAdmin();
-            $data['title'] = 'Edit Data Siswa Baru';
-            $data['tbl_siswa_baru'] = $this->Model_user->getSiswaBaruId($kode_pendaftaran);
+    // public function detail($kode_pendaftaran)
+    // {
 
-            $this->load->view('templates/admin/header', $data);
-            $this->load->view('templates/admin/sidebar', $data);
-            $this->load->view('templates/admin/topbar', $data);
-            $this->load->view('admin/edit', $data);
-            $this->load->view('templates/admin/footer');
-        } else {
-            $this->Model_user->editSiswaBaru();
-            $this->session->set_flashdata('flash', 'diupdate');
-            redirect('admin');
-        }
-    }
+    //     $data['tbl_user'] = $this->Model_user->getAdmin();
+    //     $data['title'] = 'Detail Data Siswa Baru';
+    //     $data['tbl_siswa_baru'] = $this->Model_user->getSiswaBaruId($kode_pendaftaran);
 
-    public function delete($kode_pendaftaran)
-    {
-        $this->Model_user->deleteSiswaBaru($kode_pendaftaran);
-        $this->session->set_flashdata('flash', 'dihapus');
-        redirect('admin');
-    }
+    //     $this->load->view('templates/admin/header', $data);
+    //     $this->load->view('templates/admin/sidebar', $data);
+    //     $this->load->view('templates/admin/topbar', $data);
+    //     $this->load->view('admin/detail', $data);
+    //     $this->load->view('templates/admin/footer');
+    // }
+
+
+    // public function edit($kode_pendaftaran)
+    // {
+
+    //     $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+
+    //     $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
+    //     $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
+    //     $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
+    //     $this->form_validation->set_rules('agama', 'Agama', 'required');
+    //     $this->form_validation->set_rules('warganegara', 'Kewarganegaraan', 'required');
+    //     $this->form_validation->set_rules('statussiswa', 'Status Siswa', 'required');
+    //     $this->form_validation->set_rules('anak_ke', 'Anak ke', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('dari__bersaudara', 'dari bersaudara', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('jumlah_saudara', 'Jumlah Saudara', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+    //     $this->form_validation->set_rules('rt', 'RT', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('rw', 'RW', 'required|trim|numeric|max_length[3]');
+    //     $this->form_validation->set_rules('kelurahan', 'Kelurahan / Desa', 'required|trim');
+    //     $this->form_validation->set_rules('kecamatan', 'Kecamatan', 'required|trim');
+    //     $this->form_validation->set_rules('no_hp', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
+    //     $this->form_validation->set_rules('tinggalbersama', 'Tinggal Bersama dengan', 'required');
+    //     $this->form_validation->set_rules('jarak', 'Jarak Rumah ke Sekolah', 'required|trim|numeric');
+    //     $this->form_validation->set_rules('transport', 'Ke Sekolah dengan', 'required');
+    //     $this->form_validation->set_rules('jurusan', 'Kompetensi Keahlian', 'required');
+    //     $this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required|trim');
+    //     $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
+    //     $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
+
+    //     $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+
+    //     // Data Orang Tua Siswa
+    //     $this->form_validation->set_rules('nama_ot', 'Nama Orang Tua/Wali', 'required|trim');
+    //     $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
+    //     $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
+    //     $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');
+    //     $this->form_validation->set_rules('pekerjaan_ot', 'Pekerjaan', 'required|trim');
+    //     $this->form_validation->set_rules('penghasilan_ot', 'Penghasilan', 'required|trim|numeric');
+
+    //     if ($this->form_validation->run() == false) {
+    //         $data['tbl_user'] = $this->Model_user->getAdmin();
+    //         $data['title'] = 'Edit Data Siswa Baru';
+    //         $data['tbl_siswa_baru'] = $this->Model_user->getSiswaBaruId($kode_pendaftaran);
+
+    //         $this->load->view('templates/admin/header', $data);
+    //         $this->load->view('templates/admin/sidebar', $data);
+    //         $this->load->view('templates/admin/topbar', $data);
+    //         $this->load->view('admin/edit', $data);
+    //         $this->load->view('templates/admin/footer');
+    //     } else {
+    //         $this->Model_user->editSiswaBaru();
+    //         $this->session->set_flashdata('flash', 'diupdate');
+    //         redirect('admin');
+    //     }
+    // }
+
+    // public function delete($kode_pendaftaran)
+    // {
+    //     $this->Model_user->deleteSiswaBaru($kode_pendaftaran);
+    //     $this->session->set_flashdata('flash', 'dihapus');
+    //     redirect('admin');
+    // }
 
     public function role()
     {

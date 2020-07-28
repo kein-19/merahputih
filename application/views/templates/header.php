@@ -13,8 +13,8 @@
   <link href="<?= base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template-->
-    <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <!-- <link href="<?= base_url(); ?>assets/css/scrolling-nav.css" rel="stylesheet"> -->
@@ -68,7 +68,7 @@
             <a class="nav-link js-scroll-trigger" href="<?= base_url(); ?>#galeri">GALERI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?= base_url('psb'); ?>">PSB ONLINE</a>
+            <a class="nav-link js-scroll-trigger" href="<?= base_url('ppdb'); ?>">PPDB ONLINE</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="<?= base_url(); ?>#about">ABOUT</a>
@@ -83,11 +83,11 @@
             </a>
             <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
             <div class="dropdown-menu dropdown-menu-right sm-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="<?= base_url(); ?>psb/login">LOGIN SISWA</a>
+              <a class="dropdown-item" href="<?= base_url(); ?>ppdb/login">LOGIN SISWA</a>
               <a class="dropdown-item" href="<?= base_url(); ?>auth">LOGIN GURU</a>
               <a class="dropdown-item" href="<?= base_url(); ?>auth">LOGIN TAMU</a>
               <!-- <div class="dropdown-divider"></div> -->
-              <!-- <a class="dropdown-item" href="<?= base_url(); ?>#contact">PSB ONLINE</a> -->
+              <!-- <a class="dropdown-item" href="<?= base_url(); ?>#contact">ppdb ONLINE</a> -->
             </div>
           </li>
         </ul>

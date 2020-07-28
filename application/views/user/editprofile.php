@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-12">
 
-                    <?= form_open_multipart('siswa_baru/editprofile'); ?>
+                    <?= form_open_multipart('user/editprofile'); ?>
 
                     <h3 class="h5 text-gray-900 mt-sm-5 mb-sm-3">Keterangan Pribadi Siswa</h3>
 

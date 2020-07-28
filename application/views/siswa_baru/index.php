@@ -12,7 +12,7 @@
                     </h1>
 
                     <p class="mb-0">Selamat, Anda telah berhasil melakukan Pengisian Formulir.</p>
-                    <p>Silahkan cetak formulir yang terdapat pada <a href="<?= base_url('siswa_baru/profile'); ?>" class="text-decoration-none">My Profile</a>, atau klik <a href="<?= base_url('siswa_baru/editprofile'); ?>" class="text-decoration-none">Edit Profile</a> apabila ingin mengubah data diri.</p>
+                    <p>Silahkan cetak formulir yang terdapat pada <a href="<?= base_url('user/profile'); ?>" class="text-decoration-none">My Profile</a>, atau klik <a href="<?= base_url('user/editprofile'); ?>" class="text-decoration-none">Edit Profile</a> apabila ingin mengubah data diri.</p>
                     <small>
                         <p class="mt-5">Pertanyaan dan Informasi, silahkan kontak Admin<br><i class="h5 fab fa-whatsapp-square align-middle"></i> +62853 1152 9378</p>
                     </small>

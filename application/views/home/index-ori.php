@@ -52,7 +52,7 @@
           <li class="lead font-weight-normal mt-3">Buka Website SMK MERAH PUTIH</li>
           <a href="https://www.smkmerahputih.net" class="text-white font-weight-light">https://www.smkmerahputih.net</a>
           <li class="lead font-weight-normal mt-3">Isi Formulir</li>
-          <p class="font-weight-light mb-0">Klik PSB ONLINE</p>
+          <p class="font-weight-light mb-0">Klik ppdb ONLINE</p>
           <p class="font-weight-light mb-0">Isi Formulir Pendaftaran untuk dapat menerima akses masuk ke tahap selanjutnya</p>
           <li class="lead font-weight-normal mt-3">Login Siswa</li>
           <p class="font-weight-light mb-0">Jika pengisian berhasil anda akan menerima nomor formulir / kode pendaftaran</p>
@@ -61,7 +61,7 @@
             <table>
               <tr>
                 <td>Nomor Formulir</td>
-                <td>: <strong>20-21-PSB-05110001</strong></td>
+                <td>: <strong>20-21-ppdb-05110001</strong></td>
               </tr>
               <tr>
                 <td>Password</td>

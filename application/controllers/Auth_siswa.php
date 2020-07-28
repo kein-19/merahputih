@@ -16,7 +16,7 @@ class Auth_siswa extends CI_Controller
     public function index()
     {
         // if ($this->session->userdata('email')) {
-        //     redirect('siswa_baru');
+        //     redirect('user');
         // }
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
@@ -51,9 +51,9 @@ class Auth_siswa extends CI_Controller
                     ];
                     $this->session->set_userdata($data);
                     // if ($siswa_baru['role_id'] == 1) {
-                    //     redirect('siswa_baru');
+                    //     redirect('user');
                     // } else {
-                    redirect('siswa_baru');
+                    redirect('user');
                     // }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
@@ -120,7 +120,7 @@ class Auth_siswa extends CI_Controller
     public function registration()
     {
         if ($this->session->userdata('email')) {
-            redirect('siswa_baru');
+            redirect('user');
         }
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');

@@ -50,7 +50,7 @@
             <a class="nav-link js-scroll-trigger" href="<?= base_url(); ?>#about">ABOUT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?= base_url(); ?>#contact">PSB ONLINE</a>
+            <a class="nav-link js-scroll-trigger" href="<?= base_url(); ?>#contact">PPDB ONLINE</a>
           </li>
 
           <li class="nav-item dropdown dmenu">
@@ -63,7 +63,7 @@
               <a class="dropdown-item" href="#">LOGIN GURU</a>
               <a class="dropdown-item" href="#">LOGIN TAMU</a>
               <!-- <div class="dropdown-divider"></div> -->
-              <!-- <a class="dropdown-item" href="<?= base_url(); ?>#contact">PSB ONLINE</a> -->
+              <!-- <a class="dropdown-item" href="<?= base_url(); ?>#contact">ppdb ONLINE</a> -->
             </div>
           </li>
         </ul>

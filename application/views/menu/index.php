@@ -26,6 +26,7 @@
                     <tr>
                         <th scope="col" class="align-middle text-center">#</th>
                         <th scope="col" class="align-middle">Menu</th>
+                        <th scope="col" class="align-middle">Icon</th>
                         <th scope="col" class="align-middle text-center">Action</th>
                     </tr>
                 </thead>
@@ -35,10 +36,11 @@
                         <tr>
                             <th class="align-middle text-center" scope="row"><?= $i; ?></th>
                             <td class="align-middle"><?= $m['menu']; ?></td>
+                            <td class="align-middle"><?= $m['menu_icon']; ?></td>
                             <td class="align-middle text-center">
                                 <h4>
                                     <a href="<?= base_url('menu/') . $m['id']; ?>" class="badge badge-primary tampilMenu" data-toggle="modal" data-target="#newMenuModal" data-id="<?= $m['id']; ?>" role="button" title="edit"><i class="fas fa-fw fa-edit"></i></a>
-                                    <a href="<?= base_url('menu/delete/') . $m['id']; ?>" class="badge badge-danger tombol-hapus" role="button" title="delete"><i class="fas fa-fw fa-trash"></i></a>
+                                    <a href="<?= base_url('menu/delete/') . $m['id']; ?>" class="badge badge-danger tombol-hapusmenu" role="button" title="delete"><i class="fas fa-fw fa-trash"></i></a>
                                 </h4>
                             </td>
                         </tr>
@@ -74,6 +76,9 @@
                     <input type="hidden" name="id" id="id">
                     <div class="form-group">
                         <input type="text" class="form-control" id="menu" name="menu" placeholder="Menu name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="menu_icon" name="menu_icon" placeholder="Menu icon">
                     </div>
             </div>
             <div class="modal-footer">
