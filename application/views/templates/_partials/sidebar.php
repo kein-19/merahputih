@@ -61,12 +61,12 @@
             <?php endforeach; ?>
         </li>
 
-        <hr class="sidebar-divider mt-3">
+        <hr class="sidebar-divider" style="margin: 0;">
 
     <?php endforeach; ?>
 
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('admin/logout'); ?>">
+    <li class="nav-item mt-3">
+        <a class="nav-link" href="<?= base_url('ppdb/logout'); ?>">
             <i class="fas fa-fw fa-sign-out-alt"></i>
             <span>Logout</span></a>
     </li>

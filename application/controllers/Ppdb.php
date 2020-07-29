@@ -5,6 +5,7 @@ class Ppdb extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+
         $this->load->library('form_validation');
         $this->load->model('Model_user');
         $this->load->model('Model_ppdb');
@@ -13,6 +14,8 @@ class Ppdb extends CI_Controller
 
     public function index()
     {
+        is_logged_in();
+
         $data['title'] = 'Daftar Calon Siswa Baru';
         $data['tbl_user'] = $this->Model_user->getAdmin();
         // $data['tbl_datappdb'] = $this->Model_ppdb->getAllPPDB();
@@ -188,6 +191,8 @@ class Ppdb extends CI_Controller
 
     public function add()
     {
+        is_logged_in();
+
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
@@ -267,6 +272,7 @@ class Ppdb extends CI_Controller
 
     public function detail($kode_pendaftaran)
     {
+        is_logged_in();
 
         $data['tbl_user'] = $this->Model_user->getAdmin();
         $data['title'] = 'Detail Data Siswa Baru';
@@ -282,6 +288,7 @@ class Ppdb extends CI_Controller
 
     public function edit($kode_pendaftaran)
     {
+        is_logged_in();
 
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 

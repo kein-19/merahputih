@@ -68,7 +68,7 @@
             <a class="nav-link js-scroll-trigger" href="<?= base_url(); ?>#galeri">GALERI</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="<?= base_url('ppdb'); ?>">PPDB ONLINE</a>
+            <a class="nav-link js-scroll-trigger" href="<?= base_url('ppdb/registration'); ?>">PPDB ONLINE</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="<?= base_url(); ?>#about">ABOUT</a>
