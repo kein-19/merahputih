@@ -146,7 +146,8 @@
 
 
             <div class="text-center mtop20">
-                <a href="" class="btn btn-primary mb-3 tombolAddMenu" data-toggle="modal" data-target="#newMenuModal">Add New Menu</a>
+                <a href="<?= base_url('sekolah/editdatasekolah') ?>" class="btn btn-primary mb-3" role="button" title="edit">Edit Data Sekolah</a>
+
             </div>
 
         </div>

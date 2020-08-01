@@ -102,11 +102,6 @@ class Model_user extends CI_Model
         return $this->db->get_where('tbl_datappdb', ['kode_pendaftaran' => $kode_pendaftaran])->row_array();
     }
 
-    public function getSiswaId($nis)
-    {
-        return $this->db->get_where('tbl_siswa', ['nis' => $nis])->row_array();
-    }
-
     public function addPPDB($fixkode)
     {
 

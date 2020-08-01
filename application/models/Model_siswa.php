@@ -14,6 +14,11 @@ class Model_siswa extends CI_Model
         return $this->db->get_where('tbl_siswa', ['nis' => $this->session->userdata('nis')])->row_array();
     }
 
+    public function getSiswaId($nis)
+    {
+        return $this->db->get_where('tbl_siswa', ['nis' => $nis])->row_array();
+    }
+
     // fitur untuk pagination
     public function getSiswaLimit($limit, $start, $keyword = null)
     // public function getSiswaLimit($limit, $start)

@@ -132,7 +132,7 @@ class Siswa extends CI_Controller
             $fixkode = $thn . $kodemax;
             // $fixkode = $thn . "-ppdb-" . $bln . $kodemax;
 
-            $this->Model_user->addSiswa($fixkode);
+            $this->Model_siswa->tambahDataSiswa($fixkode);
 
             $this->session->set_flashdata('flash', 'ditambahkan');
             redirect('siswa');
@@ -144,7 +144,7 @@ class Siswa extends CI_Controller
 
         $data['tbl_user'] = $this->Model_user->getAdmin();
         $data['title'] = 'Detail Data Siswa';
-        $data['tbl_siswa'] = $this->Model_user->getSiswaId($nis);
+        $data['tbl_siswa'] = $this->Model_siswa->getSiswaId($nis);
 
         $this->load->view('templates/admin/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
@@ -195,7 +195,7 @@ class Siswa extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
             $data['title'] = 'Edit Data Siswa';
-            $data['tbl_siswa'] = $this->Model_user->getSiswaId($nis);
+            $data['tbl_siswa'] = $this->Model_siswa->getSiswaId($nis);
 
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
@@ -203,7 +203,7 @@ class Siswa extends CI_Controller
             $this->load->view('siswa/edit', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            $this->Model_user->editSiswa();
+            $this->model_siswa->editDataSiswa();
             $this->session->set_flashdata('flash', 'diupdate');
             redirect('siswa');
         }

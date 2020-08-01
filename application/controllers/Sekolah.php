@@ -30,42 +30,60 @@ class Sekolah extends CI_Controller
         $this->load->view('templates/admin/footer');
     }
 
-    public function gedit()
+    public function editprofilesekolah()
     {
-        $id = $this->input->post('id');
-        echo json_encode($this->Menu_model->getMenuId($id));
-    }
 
-    public function edit()
-    {
-        $data['title'] = 'Menu Management';
-        $data['tbl_datappdb'] = $this->db->get_where('tbl_datappdb', ['email' => $this->session->userdata('email')])->row_array();
-
-        $data['menu'] = $this->db->get('tbl_profile')->result_array();
-
-        $this->form_validation->set_rules('menu', 'Menu', 'required');
+        $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
+        $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
+        $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');
+        $this->form_validation->set_rules('pekerjaan_ot', 'Pekerjaan', 'required|trim');
+        $this->form_validation->set_rules('penghasilan_ot', 'Penghasilan', 'required|trim|numeric');
 
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
+            $data['title'] = 'Edit Profile Sekolah';
+            $data['tbl_profile'] = $this->Model_sekolah->getSekolah();
 
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
-            $this->load->view('menu/index', $data);
+            $this->load->view('sekolah/editprofilesekolah', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            // $this->db->insert('tbl_profile', ['menu' => $this->input->post('menu')]);
-            $data = [
-                'menu'      => $this->input->post('menu'),
-                'menu_icon' => $this->input->post('menu_icon')
-
-            ];
-            $this->db->where('id', $this->input->post('id'));
-            $this->db->update('tbl_profile', $data);
-            $this->session->set_flashdata('flash', 'diubah');
-
-            redirect('menu');
+            $this->Model_user->editSiswa();
+            $this->session->set_flashdata('flash', 'diupdate');
+            redirect('sekolah');
         }
+
+
+        // $data['title'] = 'Menu Management';
+        // $data['tbl_datappdb'] = $this->db->get_where('tbl_datappdb', ['email' => $this->session->userdata('email')])->row_array();
+
+        // $data['menu'] = $this->db->get('tbl_profile')->result_array();
+
+        // $this->form_validation->set_rules('menu', 'Menu', 'required');
+
+        // if ($this->form_validation->run() == false) {
+        //     $data['tbl_user'] = $this->Model_user->getAdmin();
+
+        //     $this->load->view('templates/admin/header', $data);
+        //     $this->load->view('templates/admin/sidebar', $data);
+        //     $this->load->view('templates/admin/topbar', $data);
+        //     $this->load->view('menu/index', $data);
+        //     $this->load->view('templates/admin/footer');
+        // } else {
+        //     // $this->db->insert('tbl_profile', ['menu' => $this->input->post('menu')]);
+        //     $data = [
+        //         'menu'      => $this->input->post('menu'),
+        //         'menu_icon' => $this->input->post('menu_icon')
+
+        //     ];
+        //     $this->db->where('id', $this->input->post('id'));
+        //     $this->db->update('tbl_profile', $data);
+        //     $this->session->set_flashdata('flash', 'diubah');
+
+        //     redirect('menu');
+        // }
     }
 
     public function delete($id)
