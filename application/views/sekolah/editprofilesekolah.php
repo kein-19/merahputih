@@ -18,20 +18,17 @@
         </div>
         <div class="card-body ml-md-4">
 
-
+            <!-- 
             <?php if (validation_errors()) : ?>
                 <div class="menu" data-menu="<?= validation_errors(); ?>"></div>
             <?php endif; ?>
 
-            <div class="menu" data-menu="<?= $this->session->flashdata('flash'); ?>"></div>
+            <div class="menu" data-menu="<?= $this->session->flashdata('flash'); ?>"></div> -->
 
-
-            <!-- <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?> -->
-
-            <!-- <?= $this->session->flashdata('message'); ?> -->
             <div class="row">
 
                 <div class="col-sm-9">
+                    <?= form_open_multipart(''); ?>
 
                     <div class="form-group row">
                         <label class="col-sm-5 col-form-label col-form-label-sm" for="deskripsi">
@@ -51,6 +48,7 @@
                         </div>
                         <?= form_error('kenapa_kami', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
+                    </form>
 
                 </div>
 
@@ -204,9 +202,10 @@
                 <?= form_error('yayasan', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3 col-sm-7">', '</small>'); ?>
             </div>
 
-            <div class="text-center mtop20">
-                <a href="<?= base_url('sekolah/editdatasekolah') ?>" class="btn btn-primary mb-3" role="button" title="edit">Simpan</a>
-
+            <div class="form-group row justify-content-end">
+                <div class="col-sm-2">
+                    <button type="submit" name="edit" class="btn btn-primary btn-block">Simpan</button>
+                </div>
             </div>
 
         </div>

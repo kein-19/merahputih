@@ -217,13 +217,13 @@
 
             <div class="form-group row justify-content-end mt-sm-5">
                 <div class="col-sm-3">
-                    <a href="<?= base_url('siswa/edit/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-primary btn-block" role="button">Edit</a>
+                    <a href="<?= base_url('ppdb/edit/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-primary btn-block" role="button">Edit</a>
                 </div>
                 <div class="col-sm-3">
                     <a href="<?= base_url('printdoc/data/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-success btn-block" role="button" target="blank">Print</a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="<?= base_url('siswa/delete/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-danger btn-block tombol-hapus" role="button">Delete</a>
+                    <a href="<?= base_url('ppdb/delete/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-danger btn-block tombol-hapus" role="button">Delete</a>
                 </div>
             </div>
             <!-- /.container-fluid -->
