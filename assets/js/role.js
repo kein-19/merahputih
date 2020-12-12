@@ -65,7 +65,7 @@ if (role == 'ditambahkan') {
 
 
 // tombol-hapus
-$('.tombol-hapus').on('click', function (e) {
+$('.tombol-hapusrole').on('click', function (e) {
 
 	e.preventDefault();
 	const href = $(this).attr('href');

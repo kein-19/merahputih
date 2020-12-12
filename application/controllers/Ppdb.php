@@ -16,7 +16,7 @@ class Ppdb extends CI_Controller
     {
         is_logged_in();
 
-        $data['title'] = 'Daftar Calon Siswa Baru';
+        $data['title'] = 'Daftar PPDB';
         $data['tbl_user'] = $this->Model_user->getAdmin();
         // $data['tbl_datappdb'] = $this->Model_ppdb->getAllPPDB();
 
@@ -266,7 +266,7 @@ class Ppdb extends CI_Controller
             $this->Model_user->addPPDB($fixkode);
 
             $this->session->set_flashdata('flash', 'ditambahkan');
-            redirect('siswa');
+            redirect('ppdb');
         }
     }
 
@@ -338,7 +338,14 @@ class Ppdb extends CI_Controller
         } else {
             $this->Model_user->editPPDB();
             $this->session->set_flashdata('flash', 'diupdate');
-            redirect('siswa');
+            redirect('ppdb');
         }
+    }
+
+    public function delete($kode_pendaftaran)
+    {
+        $this->Model_user->deletePPDB($kode_pendaftaran);
+        $this->session->set_flashdata('flash', 'dihapus');
+        redirect('ppdb');
     }
 }

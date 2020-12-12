@@ -146,7 +146,7 @@
 
 
             <div class="text-center mtop20">
-                <a href="<?= base_url('sekolah/editdatasekolah') ?>" class="btn btn-primary mb-3" role="button" title="edit">Edit Data Sekolah</a>
+                <a href="<?= base_url('sekolah/editprofilesekolah') ?>" class="btn btn-primary mb-3" role="button" title="edit">Edit Profile Sekolah</a>
 
             </div>
 

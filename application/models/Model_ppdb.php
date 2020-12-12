@@ -212,4 +212,9 @@ class Model_ppdb extends CI_Model
         $this->db->where('kode_pendaftaran', $fixkode);
         $this->db->update('tbl_datappdb', $data);
     }
+
+    public function deletePPDB($fixkode)
+    {
+        $this->db->delete('t_user_sub_menu', ['id' => $id]);
+    }
 }

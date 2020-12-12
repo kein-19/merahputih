@@ -87,7 +87,7 @@
   <div class="container">
     <div class="row col-lg-10 mx-auto pt-2 mb-4">
       <div class="col text-center">
-        <h2>Daftar Calon Siswa Baru</h2>
+        <h2>Daftar PPDB</h2>
       </div>
     </div>
 

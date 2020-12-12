@@ -15,7 +15,7 @@
 
                 <div class="row mt-3 mb-2">
                     <div class="col-md-4">
-                        <a href="<?= base_url('ppdb/add'); ?>" class="btn btn-primary">Tambah Data Calon Siswa Baru</a>
+                        <a href="<?= base_url('ppdb/add'); ?>" class="btn btn-primary">Tambah Data PPDB</a>
                     </div>
 
                     <div class="col-md-2">
