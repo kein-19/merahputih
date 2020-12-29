@@ -139,10 +139,10 @@
             <hr>
 
             <h3 class="h5 text-gray-900 mt-sm-5 mb-sm-3">Keterangan Pendidikan Siswa Sebelumnya</h3>
-            <div class="row">
+            <!-- <div class="row">
                 <p class="card-text col-sm-5">SMP/MTs</p>
                 <p class="card-text col-sm-7"><?= $tbl_siswa['asal_sekolah']; ?></p>
-            </div>
+            </div> -->
             <div class="row">
                 <p class="card-text col-sm-5">Nomor Induk Siswa Nasional (NISN)</p>
                 <p class="card-text col-sm-7"><?= $tbl_siswa['nisn']; ?></p>

@@ -131,13 +131,13 @@
                         dari
                     </label>
                     <div class="col-sm-1">
-                        <input type="text" name="dari__bersaudara" id="dari__bersaudara" class="form-control form-control-sm" value="<?= set_value('dari__bersaudara'); ?>">
+                        <input type="text" name="dari_bersaudara" id="dari_bersaudara" class="form-control form-control-sm" value="<?= set_value('dari_bersaudara'); ?>">
                     </div>
-                    <label class="col-sm-3 col-form-label col-form-label-sm" for="dari__bersaudara">
+                    <label class="col-sm-3 col-form-label col-form-label-sm" for="dari_bersaudara">
                         saudara
                     </label>
                     <?= form_error('anak_ke', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3 col-sm-3">', '</small>'); ?>
-                    <?= form_error('dari__bersaudara', '<small class="text-danger pl-3 col-sm-4 align-items-sm-end">', '</small>'); ?>
+                    <?= form_error('dari_bersaudara', '<small class="text-danger pl-3 col-sm-4 align-items-sm-end">', '</small>'); ?>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-5 col-form-label col-form-label-sm" for="jumlah_saudara">
@@ -288,7 +288,7 @@
 
                 <h3 class="h5 text-gray-900 mt-sm-5 mb-sm-3">Keterangan Pendidikan Siswa Sebelumnya</h3>
                 <h4 class="h6 text-gray-900 mt-sm-4 mb-sm-3">Asal Sekolah <span class="text-danger">(Wajib diisi)</span></h4>
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                     <label class="col-sm-5 col-form-label col-form-label-sm" for="asal_sekolah">
                         SMP/MTs
                     </label>
@@ -296,7 +296,7 @@
                         <input type="text" name="asal_sekolah" placeholder="SMP/MTs" id="asal_sekolah" class="form-control form-control-sm" value="<?= set_value('asal_sekolah'); ?>">
                     </div>
                     <?= form_error('asal_sekolah', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
-                </div>
+                </div> -->
                 <div class="form-group row">
                     <label class="col-sm-5 col-form-label col-form-label-sm" for="nisn">
                         Nomor Induk Siswa Nasional (NISN)

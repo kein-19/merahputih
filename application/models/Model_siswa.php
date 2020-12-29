@@ -28,7 +28,7 @@ class Model_siswa extends CI_Model
             $this->db->like('nis', $keyword);
             $this->db->or_like('nama', $keyword);
             $this->db->or_like('kelurahan', $keyword);
-            $this->db->or_like('validasi', $keyword);
+            // $this->db->or_like('validasi', $keyword);
         }
 
         return $this->db->get('tbl_siswa', $limit, $start)->result_array();
@@ -88,7 +88,7 @@ class Model_siswa extends CI_Model
         $email = $this->input->post('email', true);
 
         $data = [
-            'nis'      => ($fixkode),
+            'nis'                   => ($fixkode),
             'nama'                  => htmlspecialchars($nama),
             'tempat_lahir'          => htmlspecialchars($this->input->post('tempat_lahir', TRUE)),
             'tanggal_lahir'         => htmlspecialchars($this->input->post('tanggal_lahir', TRUE)),
@@ -97,7 +97,7 @@ class Model_siswa extends CI_Model
             'warganegara'           => $this->input->post('warganegara', TRUE),
             'statussiswa'           => $this->input->post('statussiswa', TRUE),
             'anak_ke'               => htmlspecialchars($this->input->post('anak_ke', TRUE)),
-            'dari__bersaudara'      => htmlspecialchars($this->input->post('dari__bersaudara', TRUE)),
+            'dari_bersaudara'      => htmlspecialchars($this->input->post('dari_bersaudara', TRUE)),
             'jumlah_saudara'        => htmlspecialchars($this->input->post('jumlah_saudara', TRUE)),
             'alamat'                => htmlspecialchars($this->input->post('alamat', TRUE)),
             'rt'                    => htmlspecialchars($this->input->post('rt', TRUE)),
@@ -109,7 +109,7 @@ class Model_siswa extends CI_Model
             'jarak'                 => htmlspecialchars($this->input->post('jarak', TRUE)),
             'transport'             => $this->input->post('transport', TRUE),
             'jurusan'               => $this->input->post('jurusan', TRUE),
-            'asal_sekolah'          => htmlspecialchars($this->input->post('asal_sekolah', TRUE)),
+            // 'asal_sekolah'          => htmlspecialchars($this->input->post('asal_sekolah', TRUE)),
             'nisn'                  => htmlspecialchars($this->input->post('nisn', TRUE)),
             'no_sttb'               => htmlspecialchars($this->input->post('no_sttb', TRUE)),
             'pindahan'              => htmlspecialchars($this->input->post('pindahan', TRUE)),
@@ -130,7 +130,7 @@ class Model_siswa extends CI_Model
             'password' => password_hash($this->input->post('tanggal_lahir'), PASSWORD_DEFAULT),
             'role_id' => 2,
             'is_active' => 0,
-            'validasi' => 'Belum',
+            // 'validasi' => 'Belum',
             'date_created' => time()
         ];
         $this->db->insert('tbl_siswa', $data);
@@ -144,7 +144,7 @@ class Model_siswa extends CI_Model
         $fixkode = $this->input->post('nis', true);
 
         $data = [
-            'nis'      => ($fixkode),
+            'nis'                   => ($fixkode),
             'nama'                  => htmlspecialchars($nama),
             'tempat_lahir'          => htmlspecialchars($this->input->post('tempat_lahir', TRUE)),
             'tanggal_lahir'         => htmlspecialchars($this->input->post('tanggal_lahir', TRUE)),
@@ -153,7 +153,7 @@ class Model_siswa extends CI_Model
             'warganegara'           => $this->input->post('warganegara', TRUE),
             'statussiswa'           => $this->input->post('statussiswa', TRUE),
             'anak_ke'               => htmlspecialchars($this->input->post('anak_ke', TRUE)),
-            'dari__bersaudara'      => htmlspecialchars($this->input->post('dari__bersaudara', TRUE)),
+            'dari_bersaudara'      => htmlspecialchars($this->input->post('dari_bersaudara', TRUE)),
             'jumlah_saudara'        => htmlspecialchars($this->input->post('jumlah_saudara', TRUE)),
             'alamat'                => htmlspecialchars($this->input->post('alamat', TRUE)),
             'rt'                    => htmlspecialchars($this->input->post('rt', TRUE)),
@@ -165,7 +165,7 @@ class Model_siswa extends CI_Model
             'jarak'                 => htmlspecialchars($this->input->post('jarak', TRUE)),
             'transport'             => $this->input->post('transport', TRUE),
             'jurusan'               => $this->input->post('jurusan', TRUE),
-            'asal_sekolah'          => htmlspecialchars($this->input->post('asal_sekolah', TRUE)),
+            // 'asal_sekolah'          => htmlspecialchars($this->input->post('asal_sekolah', TRUE)),
             'nisn'                  => htmlspecialchars($this->input->post('nisn', TRUE)),
             'no_sttb'               => htmlspecialchars($this->input->post('no_sttb', TRUE)),
             'pindahan'              => htmlspecialchars($this->input->post('pindahan', TRUE)),
@@ -215,5 +215,14 @@ class Model_siswa extends CI_Model
         // $this->db->set('image', $new_image);
         $this->db->where('nis', $fixkode);
         $this->db->update('tbl_siswa', $data);
+    }
+
+
+    public function deleteSiswa($nis)
+    {
+        $this->db->delete(
+            'tbl_siswa',
+            ['nis' => $nis]
+        );
     }
 }

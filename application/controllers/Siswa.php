@@ -71,7 +71,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('warganegara', 'Kewarganegaraan', 'required');
         $this->form_validation->set_rules('statussiswa', 'Status Siswa', 'required');
         $this->form_validation->set_rules('anak_ke', 'Anak ke', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('dari__bersaudara', 'dari bersaudara', 'required|trim|numeric|max_length[3]');
+        $this->form_validation->set_rules('dari_bersaudara', 'dari bersaudara', 'required|trim|numeric|max_length[3]');
         $this->form_validation->set_rules('jumlah_saudara', 'Jumlah Saudara', 'required|trim|numeric|max_length[3]');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
         $this->form_validation->set_rules('rt', 'RT', 'required|trim|numeric|max_length[3]');
@@ -83,7 +83,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('jarak', 'Jarak Rumah ke Sekolah', 'required|trim|numeric');
         $this->form_validation->set_rules('transport', 'Ke Sekolah dengan', 'required');
         $this->form_validation->set_rules('jurusan', 'Kompetensi Keahlian', 'required');
-        $this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required|trim');
+        // $this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required|trim');
         $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
         $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
 
@@ -166,7 +166,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('warganegara', 'Kewarganegaraan', 'required');
         $this->form_validation->set_rules('statussiswa', 'Status Siswa', 'required');
         $this->form_validation->set_rules('anak_ke', 'Anak ke', 'required|trim|numeric|max_length[3]');
-        $this->form_validation->set_rules('dari__bersaudara', 'dari bersaudara', 'required|trim|numeric|max_length[3]');
+        $this->form_validation->set_rules('dari_bersaudara', 'dari bersaudara', 'required|trim|numeric|max_length[3]');
         $this->form_validation->set_rules('jumlah_saudara', 'Jumlah Saudara', 'required|trim|numeric|max_length[3]');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
         $this->form_validation->set_rules('rt', 'RT', 'required|trim|numeric|max_length[3]');
@@ -178,7 +178,7 @@ class Siswa extends CI_Controller
         $this->form_validation->set_rules('jarak', 'Jarak Rumah ke Sekolah', 'required|trim|numeric');
         $this->form_validation->set_rules('transport', 'Ke Sekolah dengan', 'required');
         $this->form_validation->set_rules('jurusan', 'Kompetensi Keahlian', 'required');
-        $this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required|trim');
+        // $this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required|trim');
         $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
         $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
 
@@ -203,9 +203,17 @@ class Siswa extends CI_Controller
             $this->load->view('siswa/edit', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            $this->model_siswa->editDataSiswa();
+            $this->Model_siswa->editDataSiswa();
             $this->session->set_flashdata('flash', 'diupdate');
             redirect('siswa');
         }
+    }
+
+
+    public function delete($nis)
+    {
+        $this->Model_siswa->deleteSiswa($nis);
+        $this->session->set_flashdata('flash', 'dihapus');
+        redirect('siswa');
     }
 }
