@@ -263,7 +263,8 @@ class Ppdb extends CI_Controller
             $fixkode = $thn . $kodemax;
             // $fixkode = $thn . "-ppdb-" . $bln . $kodemax;
 
-            $this->Model_user->addPPDB($fixkode);
+            $this->Model_ppdb->tambahDataPPDB($fixkode);
+            // $this->Model_user->addPPDB($fixkode);
 
             $this->session->set_flashdata('flash', 'ditambahkan');
             redirect('ppdb');
