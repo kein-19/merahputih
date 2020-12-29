@@ -276,7 +276,7 @@ class Ppdb extends CI_Controller
 
         $data['tbl_user'] = $this->Model_user->getAdmin();
         $data['title'] = 'Detail Data Siswa Baru';
-        $data['tbl_datappdb'] = $this->Model_user->getPPDBId($kode_pendaftaran);
+        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDBId($kode_pendaftaran);
 
         $this->load->view('templates/admin/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
@@ -328,7 +328,7 @@ class Ppdb extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
             $data['title'] = 'Edit Data Siswa Baru';
-            $data['tbl_datappdb'] = $this->Model_user->getPPDBId($kode_pendaftaran);
+            $data['tbl_datappdb'] = $this->Model_ppdb->getPPDBId($kode_pendaftaran);
 
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
@@ -336,7 +336,7 @@ class Ppdb extends CI_Controller
             $this->load->view('ppdb/edit', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            $this->Model_user->editPPDB();
+            $this->Model_ppdb->editPPDB();
             $this->session->set_flashdata('flash', 'diupdate');
             redirect('ppdb');
         }
@@ -344,7 +344,7 @@ class Ppdb extends CI_Controller
 
     public function delete($kode_pendaftaran)
     {
-        $this->Model_user->deletePPDB($kode_pendaftaran);
+        $this->Model_ppdb->deletePPDB($kode_pendaftaran);
         $this->session->set_flashdata('flash', 'dihapus');
         redirect('ppdb');
     }
