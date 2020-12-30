@@ -31,6 +31,7 @@
                     <?= form_open_multipart(''); ?>
 
                     <div class="form-group row">
+
                         <label class="col-sm-5 col-form-label col-form-label-sm" for="deskripsi">
                             Deskripsi
                         </label>
@@ -58,7 +59,7 @@
                                 <img src="<?= base_url('assets/img/profile/') . $tbl_siswa['image']; ?>" class="card-img rounded mx-auto d-block" style="width: 100px">
                             </div> -->
                     <div class="row">
-                        <img src="<?= base_url('assets/img/profile/') . $tbl_profile['image']; ?>" class="img-thumbnail mb-sm-3 p-sm-2">
+                        <img src="<?= base_url('assets/img/profile/') . $tbl_profile['logo']; ?>" class="img-thumbnail mb-sm-3 p-sm-2">
                         <div class="custom-file col-form-label col-form-label-sm">
                             <input type="file" class="custom-file-input" id="image" name="image">
                             <label class="custom-file-label" for="image">Choose file</label>
