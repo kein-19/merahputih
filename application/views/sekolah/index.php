@@ -20,11 +20,10 @@
 
 
             <?php if (validation_errors()) : ?>
-                <div class="menu" data-menu="<?= validation_errors(); ?>"></div>
+                <div class="sekolah" data-sekolah="<?= validation_errors(); ?>"></div>
             <?php endif; ?>
 
-            <div class="menu" data-menu="<?= $this->session->flashdata('flash'); ?>"></div>
-
+            <div class="sekolah" data-sekolah="<?= $this->session->flashdata('flash'); ?>"></div>
 
             <!-- <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>'); ?> -->
 

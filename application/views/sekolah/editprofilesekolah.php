@@ -18,12 +18,6 @@
         </div>
         <div class="card-body ml-md-4">
 
-            <!-- 
-            <?php if (validation_errors()) : ?>
-                <div class="menu" data-menu="<?= validation_errors(); ?>"></div>
-            <?php endif; ?>
-
-            <div class="menu" data-menu="<?= $this->session->flashdata('flash'); ?>"></div> -->
 
             <div class="row">
 

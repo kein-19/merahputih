@@ -55,6 +55,7 @@
             <script src="<?= base_url(); ?>assets/js/submenu.js"></script>
             <script src="<?= base_url(); ?>assets/js/menu.js"></script>
             <script src="<?= base_url(); ?>assets/js/role.js"></script>
+            <script src="<?= base_url(); ?>assets/js/sekolah.js"></script>
 
             <script>
                 $('.custom-file-input').on('change', function() {
