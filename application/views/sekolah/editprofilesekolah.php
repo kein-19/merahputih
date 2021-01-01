@@ -82,16 +82,6 @@
                 <?= form_error('misi', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
             </div>
 
-
-            <div class="form-group row mb-sm-3 p-sm-2">
-                <label class="col-sm-5 col-form-label col-form-label-sm" for="motto">
-                    MOTTO
-                </label>
-                <div class="col-sm-7">
-                    <textarea rows="7" cols="50" name="motto" id="motto" class="form-control form-control-sm"><?= $tbl_profile['motto']; ?></textarea>
-                </div>
-                <?= form_error('motto', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
-            </div>
             <hr>
 
             <h3 class="h3 text-gray-900 mt-sm-5 mb-sm-3">Profile</h3>

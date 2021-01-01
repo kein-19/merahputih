@@ -238,8 +238,9 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto text-light">
-        <h2>About</h2>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+        <h2 class="mb-lg-3">About</h2>
+        <p style="text-indent: 60px;" class="lead text-justify"><?= $tbl_profile->deskripsi ?></p>
+        <p style="text-indent: 60px;" class="lead text-justify"><?= $tbl_profile->kenapa_kami ?></p>
       </div>
     </div>
   </div>

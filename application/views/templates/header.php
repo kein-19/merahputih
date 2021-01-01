@@ -71,6 +71,9 @@
             <a class="nav-link js-scroll-trigger" href="<?= base_url('ppdb/registration'); ?>">PPDB ONLINE</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="<?= base_url('sekolah/profile'); ?>">PROFILE SEKOLAH</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="<?= base_url(); ?>#about">ABOUT</a>
           </li>
           <li class="nav-item">

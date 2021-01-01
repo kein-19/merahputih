@@ -68,12 +68,6 @@
                                     </div>
                                     <h6 style="line-height:2"><?= nl2br($tbl_profile->misi, false) ?></h6><br>
                                 </li>
-                                <li>
-                                    <div class="row">
-                                        <h4 class="display-8">MOTTO</h4>
-                                    </div>
-                                    <h6><?= $tbl_profile->motto ?></h6><br>
-                                </li>
                             </ul>
                             <!-- end of user messages -->
                         </div>

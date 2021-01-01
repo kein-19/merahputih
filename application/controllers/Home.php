@@ -7,6 +7,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Model_ppdb');
+        $this->load->model('Model_sekolah');
     }
 
     public function index()
@@ -48,6 +49,8 @@ class Home extends CI_Controller
         $data['start'] = $this->uri->segment(3);
 
         $data['tbl_datappdb'] = $this->Model_ppdb->getPPDBLimit($config['per_page'], $data['start'], $data['keyword']);
+
+        $data['tbl_profile'] = $this->Model_sekolah->getSekolah();
 
         $this->load->view('templates/header', $data);
         $this->load->view('home/index', $data);
