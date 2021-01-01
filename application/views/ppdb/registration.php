@@ -154,7 +154,7 @@
 
                         <hr style="border:1px solid light;">
 
-                        <form class="user" method="post" action="<?= base_url('ppdb'); ?>">
+                        <form class="user" method="post" action="<?= base_url('ppdb/registration'); ?>">
                             <h3 class="h5 text-gray-900 mt-sm-5 mb-sm-3">Keterangan Pribadi Siswa</h3>
 
                             <div class="form-group row">

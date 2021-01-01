@@ -11,7 +11,7 @@ class Ppdb extends CI_Controller
         $this->load->model('Model_ppdb');
     }
 
-
+    // halaman ppdb login sebagai admin
     public function index()
     {
         is_logged_in();
@@ -152,7 +152,7 @@ class Ppdb extends CI_Controller
             $this->Model_ppdb->tambahDataPPDB($fixkode);
 
             $this->session->set_flashdata('message', $fixkode);
-            redirect('ppdb');
+            redirect('ppdb/registration');
         }
     }
 
