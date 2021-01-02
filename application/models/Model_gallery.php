@@ -9,6 +9,11 @@ class Model_gallery extends CI_Model
         return $this->db->get('tbl_images')->row();
     }
 
+    public function getAllImage()
+    {
+        return $this->db->get('tbl_images')->result_array();
+    }
+
     public function getImageId($id)
     {
         return $this->db->get_where('tbl_images', ['id' => $id])->row_array();

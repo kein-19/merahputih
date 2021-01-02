@@ -184,48 +184,25 @@
       <div class="projects-holder-3">
         <div class="projects-holder">
           <div class="row">
-            <div class="col-md-4 col-sm-6 project-item mix nature">
-              <div class="thumb">
-                <div class="image">
-                  <a href="<?= base_url(); ?>assets/img/portfolio_big_item_01.jpg" data-lightbox="image-1"><img src="<?= base_url(); ?>assets/img/portfolio_item_01.jpg" class="img-thumbnail"></a>
+            <?php foreach ($tbl_images as $ti) : ?>
+              <div class="col-md-4 col-sm-6 project-item mix nature">
+                <div class="thumb">
+                  <div class="image">
+                    <a href="<?= base_url('assets/img/gallery/') . $ti['image']; ?>" data-lightbox="image-1"><img src="<?= base_url('assets/img/gallery/') . $ti['image']; ?>" class="img-thumbnail"></a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-item mix animation">
-              <div class="thumb">
-                <div class="image">
-                  <a href="<?= base_url(); ?>assets/img/portfolio_big_item_02.jpg" data-lightbox="image-1"><img src="<?= base_url(); ?>assets/img/portfolio_item_02.jpg" class="img-thumbnail"></a>
+            <?php endforeach; ?>
+
+            <!-- <?php foreach ($tbl_images as $ti) : ?>
+              <div class="col-md-4 col-sm-6 project-item mix animation">
+                <div class="thumb">
+                  <div class="image">
+                    <a href="<?= base_url('assets/img/gallery/') . $ti['image']; ?>" data-lightbox="image-1"></a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-item mix branding">
-              <div class="thumb">
-                <div class="image">
-                  <a href="<?= base_url(); ?>assets/img/portfolio_big_item_03.jpg" data-lightbox="image-1"><img src="<?= base_url(); ?>assets/img/portfolio_item_03.jpg" class="img-thumbnail"></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-item mix graphic nature">
-              <div class="thumb">
-                <div class="image">
-                  <a href="<?= base_url(); ?>assets/img/portfolio_big_item_04.jpg" data-lightbox="image-1"><img src="<?= base_url(); ?>assets/img/portfolio_item_04.jpg" class="img-thumbnail"></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-item mix branding">
-              <div class="thumb">
-                <div class="image">
-                  <a href="<?= base_url(); ?>assets/img/portfolio_big_item_05.jpg" data-lightbox="image-1"><img src="<?= base_url(); ?>assets/img/portfolio_item_05.jpg" class="img-thumbnail"></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-item mix graphic animation">
-              <div class="thumb">
-                <div class="image">
-                  <a href="<?= base_url(); ?>assets/img/portfolio_big_item_06.jpg" data-lightbox="image-1"><img src="<?= base_url(); ?>assets/img/portfolio_item_06.jpg" class="img-thumbnail"></a>
-                </div>
-              </div>
-            </div>
+            <?php endforeach; ?> -->
           </div>
         </div>
       </div>

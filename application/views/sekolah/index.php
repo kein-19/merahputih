@@ -80,7 +80,7 @@
                 <div class="col-12">
 
                     <table style="font-size: 15px" class="table table-striped">
-                        <h2 style="text-align: center">Profile</h2>
+                        <h2 style="text-align: center">Keterangan</h2>
                         <tbody>
                             <tr>
                                 <th scope="row">Nama Sekolah</th>
