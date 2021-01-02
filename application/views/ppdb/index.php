@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <form action="<?= base_url('admin'); ?>" method="post">
+                        <form action="<?= base_url('ppdb'); ?>" method="post">
 
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="Search keyword.." name="keyword" autocomplete="off" autofocus>

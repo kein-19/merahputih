@@ -22,7 +22,7 @@
                                 Title
                             </label>
                             <div class="col-sm-7">
-                                <input type="text" name="title" placeholder="Title" id="title" class="form-control form-control-sm" value="<?= $tbl_images['title']; ?>">
+                                <input type="text" name="title" placeholder="Title" id="title" class="form-control form-control-sm" value="<?= set_value('title'); ?>">
                             </div>
                             <?= form_error('title', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                         </div>
@@ -30,7 +30,7 @@
                                 <img src="<?= base_url('assets/img/profile/') . $tbl_datappdb['image']; ?>" class="card-img rounded mx-auto d-block" style="width: 100px">
                             </div> -->
                         <div class="row mb-sm-3 p-sm-2">
-                            <img src="<?= base_url('assets/img/gallery/') . $tbl_images['image'] ?>" class="img-thumbnail mb-sm-3 p-sm-2">
+                            <img src="<?= base_url('assets/img/gallery/default-img.png') ?>" class="img-thumbnail mb-sm-3 p-sm-2">
                             <div class="custom-file col-form-label col-form-label-sm">
                                 <input type="file" class="custom-file-input" id="image" name="image">
                                 <label class="custom-file-label" for="image">Choose file</label>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="row justify-content-end">
                             <div class="col-sm-4">
-                                <button type="submit" name="add" class="btn btn-primary btn-block">Simpan</button>
+                                <button type="submit" name="add" class="btn btn-primary btn-block">Tambah</button>
                             </div>
                         </div>
                     </div>
