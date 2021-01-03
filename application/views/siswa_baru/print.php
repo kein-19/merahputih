@@ -238,12 +238,13 @@
 
                     <h3 class="h5 text-gray-900 mt-sm-5 mb-sm-3">Keterangan Persyaratan Yang Harus Dilengkapi</h3>
                     <ol>
-                        <li>Fotokopi Surat Tanda kelulusan</li>
+                        <li>Formulir</li>
+                        <li>Fotokopi Ijazah / Surat Kelulusan</li>
+                        <li>Fotokopi Akte Kelahiran</li>
+                        <li>Fotokopi Kartu Keluarga</li>
                         <li>Fotokopi NISN</li>
-                        <li>Fotokopi Rapor Semester 6 Dilegalisir</li>
-                        <li>Fotokopi KK</li>
                         <li>Fotokopi KTP Orang Tua/Wali</li>
-                        <li>Materai 6000</li>
+                        <li>Fotokopi KIP (Kartu Indonesia Pintar) / PKH (Program Keluarga Harapan) / KKS (Kartu Keluarga Sejahtera) (Kartu Bantuan Pemerintah)</li>
                     </ol>
                     <p>Biaya untuk menjadi siswa SMK MERAH PUTIH sebesar Rp. 3.436.000,- yang dapat di angsur sebanyak 3x. Perincian pembiayaan dapat di terdapat pada Brosur.
                     </p>

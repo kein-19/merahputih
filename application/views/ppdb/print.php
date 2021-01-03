@@ -234,26 +234,6 @@
                     </div>
                     <hr>
 
-                    <!-- Persyaratan -->
-
-                    <h3 class="h5 text-gray-900 mt-sm-5 mb-sm-3">Keterangan Persyaratan Yang Harus Dilengkapi</h3>
-                    <ol>
-                        <li>Fotokopi Surat Tanda kelulusan</li>
-                        <li>Fotokopi NISN</li>
-                        <li>Fotokopi Rapor Semester 6 Dilegalisir</li>
-                        <li>Fotokopi KK</li>
-                        <li>Fotokopi KTP Orang Tua/Wali</li>
-                        <li>Materai 6000</li>
-                    </ol>
-                    <p>Biaya untuk menjadi siswa SMK MERAH PUTIH sebesar Rp. 3.436.000,- yang dapat di angsur sebanyak 3x. Perincian pembiayaan dapat di terdapat pada Brosur.
-                    </p>
-                    <p>Dengan menyerahkan persyaratan di atas maka calon siswa tersebut, dinyatakan sebagai siswa SMK MERAH PUTIH.</p>
-                    <p align="right" class="mr-sm-3">Bekasi, <?= date('d F Y'); ?></p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p align="right" class="mr-sm-3"><?= $tbl_datappdb['nama']; ?></p>
-
                 </div>
                 <!-- /.container-fluid -->
 
