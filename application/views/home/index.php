@@ -73,7 +73,7 @@
           <p class="font-weight-light mb-0">Serahkan Formulir tersebut ke sekolah beserta berkas-berkas yang di minta.</p>
           <li class="lead font-weight-normal mt-3">Pembayaran</li>
           <p class="font-weight-light mb-0">Biaya pendaftaran dapat di Cicil sebanyak 3x melalui Bank DKI atau langsung ke sekolah.</p>
-
+        </ol>
           <!-- Akhir dari Petunjuk Pendaftaran -->
 
       </div>

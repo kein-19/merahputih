@@ -104,10 +104,11 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4 col-sm-6 project-item mix nature">
-                            <img src="<?= base_url('assets/img/profile/') . $tbl_profile->image ?>">
-
-                        </div>
+                        <center>
+                            <div class="col-sm-12">
+                                <img src="<?= base_url('assets/img/profile/') . $tbl_profile->image ?>">
+                            </div>
+                        </center>
                     </div>
                     <div class="row">
                         <center>

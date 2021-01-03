@@ -49,7 +49,7 @@ class User extends CI_Controller
         // $this->Model_ppdb->getAgama();
         // $this->db->get('tbl_agama')->row_array();
         // $this->db->get_where('tbl_datappdb', ['kode_pendaftaran' => $this->session->userdata('kode_pendaftaran')])->row_array();
-        $data['title'] = 'My Profile';
+        $data['title'] = 'Data Diri';
         $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
 
         $this->load->view('templates/_partials/header', $data);
@@ -61,7 +61,7 @@ class User extends CI_Controller
 
     public function editProfile()
     {
-        $data['title'] = 'Edit Profile';
+        $data['title'] = 'Edit Data Diri';
         $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
         // $data['tbl_datappdb'] = $this->Model_ppdb->getAgama();
         // $data['nama_agama'] = $this->db->get('tbl_agama')->row_array();
@@ -133,7 +133,7 @@ class User extends CI_Controller
         // $data = $this->load->view('mpdf_v');
         // is_logged_in();
 
-        $data['title'] = 'Detail Data Siswa Baru';
+        $data['title'] = 'Data Diri';
         $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
         // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
         $this->load->view('siswa_baru/print', $data);
