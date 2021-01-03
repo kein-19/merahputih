@@ -220,7 +220,7 @@
                     <a href="<?= base_url('admin/edit/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-primary btn-block" role="button">Edit</a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="<?= base_url('printdoc/data/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-success btn-block" role="button" target="blank">Print</a>
+                    <a href="<?= base_url('ppdb/print/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-success btn-block" role="button" target="blank">Print</a>
                 </div>
                 <div class="col-sm-3">
                     <a href="<?= base_url('admin/delete/') . $tbl_datappdb['kode_pendaftaran']; ?>" class="print btn btn-danger btn-block tombol-hapus" role="button">Delete</a>

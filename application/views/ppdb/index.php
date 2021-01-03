@@ -79,7 +79,7 @@
                                 <td class="align-middle text-center">
                                     <h4><a href="<?= base_url('ppdb/detail/') . $sb['kode_pendaftaran']; ?>" class="badge badge-secondary" role="button" title="detail"><i class="far fa-fw fa-id-card"></i></a>
                                         <a href="<?= base_url('ppdb/edit/') . $sb['kode_pendaftaran']; ?>" class="badge badge-primary" role="button" title="edit"><i class="fas fa-fw fa-edit"></i></a>
-                                        <a href="<?= base_url('printdoc/data/') . $sb['kode_pendaftaran']; ?>" class="badge badge-success" role="button" target="blank" title="print"><i class="fas fa-fw fa-print"></i></a>
+                                        <a href="<?= base_url('ppdb/print/') . $sb['kode_pendaftaran']; ?>" class="badge badge-success" role="button" target="blank" title="print"><i class="fas fa-fw fa-print"></i></a>
                                         <a href="<?= base_url('ppdb/delete/') . $sb['kode_pendaftaran']; ?>" class="badge badge-danger tombol-hapus" role="button" title="delete"><i class="fas fa-fw fa-trash"></i></a></h4>
                                 </td>
                             </tr>

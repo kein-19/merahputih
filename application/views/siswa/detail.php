@@ -190,7 +190,7 @@
                     <a href="<?= base_url('siswa/edit/') . $tbl_siswa['nis']; ?>" class="print btn btn-primary btn-block" role="button">Edit</a>
                 </div>
                 <div class="col-sm-3">
-                    <a href="<?= base_url('printdoc/data/') . $tbl_siswa['nis']; ?>" class="print btn btn-success btn-block" role="button" target="blank">Print</a>
+                    <a href="<?= base_url('ppdb/print/') . $tbl_siswa['nis']; ?>" class="print btn btn-success btn-block" role="button" target="blank">Print</a>
                 </div>
                 <div class="col-sm-3">
                     <a href="<?= base_url('siswa/delete/') . $tbl_siswa['nis']; ?>" class="print btn btn-danger btn-block tombol-hapus" role="button">Delete</a>
