@@ -224,7 +224,7 @@
 
             <div class="form-group row justify-content-end mt-sm-5">
                 <div class="col-sm-3">
-                    <a href="<?= base_url('printdoc/'); ?>" class="print btn btn-success btn-block" role="button" target="blank">Print</a>
+                    <a href="<?= base_url('user/print'); ?>" class="print btn btn-success btn-block" role="button" target="blank">Print</a>
                     <!-- <a href="<?= base_url('mpdfcontroller/printPDF'); ?>" type="submit" class="print btn btn-success btn-block">Print</a> -->
                 </div>
             </div>

@@ -199,6 +199,10 @@
                     </div>
                     <hr>
 
+                    <div class="row mt-sm-5 mb-sm-3">
+                    <hr>                     
+                    </div>
+                    
                     <h3 class="h5 text-gray-900 mt-sm-5 mb-sm-3">Keterangan Data Orang Tua Siswa</h3>
                     <div class="row">
                         <p class="card-text col-sm-5">Nama Orang Tua/Wali</p>
