@@ -27,7 +27,7 @@
         </form>
         <hr>
         <div class="text-center">
-            <a class="text-light" href="<?= base_url('ppdb'); ?>">Pendaftaran Siswa Baru</a>
+            <a class="text-light" href="<?= base_url('ppdb/registration'); ?>">Pendaftaran Siswa Baru</a>
         </div>
     </div>
 </div>

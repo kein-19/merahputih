@@ -1,9 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Admin extends CI_Controller
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -23,7 +21,6 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Dashboard';
         $data['tbl_user'] = $this->Model_user->getAdmin();
-        // $data['tbl_datappdb'] = $this->Model_ppdb->getAllPPDB();
 
         // load library
         $this->load->library('pagination');
@@ -45,27 +42,20 @@ class Admin extends CI_Controller
         $this->db->or_like('validasi', $data['keyword']);
         $this->db->from('tbl_datappdb');
         $config['total_rows'] = $this->db->count_all_results();
-        // $config['total_rows'] = $this->Model_ppdb->countAllPPDB();
         $data['total_rows'] = $config['total_rows'];
         $config['per_page'] = 5;
-
         $root = "http://" . $_SERVER['HTTP_HOST'] . '/';
         $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
         $root .= 'admin/index';
         $config['base_url']    = "$root";
+
         // initialize
         $this->pagination->initialize($config);
-
         $data['start'] = $this->uri->segment(3);
-
         $data['tbl_datappdb'] = $this->Model_ppdb->getPPDBLimit($config['per_page'], $data['start'], $data['keyword']);
-
         $data['tbl_siswa'] = $this->Model_siswa->countAllSiswa();
-
         $data['tbl_images'] = $this->Model_gallery->getImageLimit(6, 0);
-
         $data['tbl_profile'] = $this->Model_sekolah->getSekolah();
-
         $this->load->view('templates/admin/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
         $this->load->view('templates/admin/topbar', $data);
@@ -77,13 +67,9 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Role';
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
-
         $data['role'] = $this->db->get('t_user_role')->result_array();
-
         $this->form_validation->set_rules('role', 'Role', 'required');
-
         if ($this->form_validation->run() == false) {
-
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
@@ -92,7 +78,6 @@ class Admin extends CI_Controller
         } else {
             $this->db->insert('t_user_role', ['role' => $this->input->post('role')]);
             $this->session->set_flashdata('flash', 'ditambahkan');
-
             redirect('admin/role');
         }
     }
@@ -108,11 +93,8 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Role';
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
-
         $data['role'] = $this->db->get('t_user_role')->result_array();
-
         $this->form_validation->set_rules('role', 'Role', 'required');
-
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
 
@@ -128,7 +110,6 @@ class Admin extends CI_Controller
             $this->db->where('id', $this->input->post('id'));
             $this->db->update('t_user_role', $data);
             $this->session->set_flashdata('flash', 'diubah');
-
             redirect('admin/role');
         }
     }
@@ -145,12 +126,9 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Role Access';
         $data['tbl_user'] = $this->db->get_where('tbl_user', ['email' => $this->session->userdata('email')])->row_array();
-
         $data['role'] = $this->db->get_where('t_user_role', ['id' => $role_id])->row_array();
-
         $this->db->where('id !=', 1);
         $data['menu'] = $this->db->get('t_user_menu')->result_array();
-
         $this->load->view('templates/admin/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
         $this->load->view('templates/admin/topbar', $data);
@@ -163,20 +141,16 @@ class Admin extends CI_Controller
     {
         $menu_id = $this->input->post('menuId');
         $role_id = $this->input->post('roleId');
-
         $data = [
             'role_id' => $role_id,
             'menu_id' => $menu_id
         ];
-
         $result = $this->db->get_where('t_user_access_menu', $data);
-
         if ($result->num_rows() < 1) {
             $this->db->insert('t_user_access_menu', $data);
         } else {
             $this->db->delete('t_user_access_menu', $data);
         }
-
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Access Changed!</div>');
     }
 
@@ -185,13 +159,10 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Change Password';
         $data['tbl_user'] = $this->Model_user->getAdmin();
-
         $this->form_validation->set_rules('current_password', 'Current Password', 'required|trim');
         $this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]');
         $this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|min_length[3]|matches[new_password1]');
-
         if ($this->form_validation->run() == false) {
-
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
@@ -202,23 +173,18 @@ class Admin extends CI_Controller
             $new_password = $this->input->post('new_password1');
             if (!password_verify($current_password, $data['tbl_user']['password'])) {
                 $this->session->set_flashdata('flash', 'salah');
-                // $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong current password!</div>');
                 redirect('admin/changepassword');
             } else {
                 if ($current_password == $new_password) {
                     $this->session->set_flashdata('flash', 'sama');
-                    // $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">New password cannot be the same as current password!</div>');
                     redirect('admin/changepassword');
                 } else {
                     // password sudah ok
                     $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
-
                     $this->db->set('password', $password_hash);
                     $this->db->where('email', $this->session->userdata('email'));
                     $this->db->update('tbl_user');
-
                     $this->session->set_flashdata('flash', 'diubah');
-                    // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password changed!</div>');
                     redirect('admin/changepassword');
                 }
             }

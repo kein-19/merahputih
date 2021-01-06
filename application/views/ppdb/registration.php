@@ -70,7 +70,7 @@
                                 <table>
                                     <tr>
                                         <td>Nomor Formulir</td>
-                                        <td>: <strong>20-21-ppdb-05110001</strong></td>
+                                        <td>: <strong>2021000</strong></td>
                                     </tr>
                                     <tr>
                                         <td>Password</td>

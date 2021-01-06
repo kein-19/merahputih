@@ -164,7 +164,7 @@
 
     <div class="row justify-content-center">
       <div class="btn-group btn-block col-lg-5" role="group" aria-label="Basic example">
-        <a href=" <?= base_url('ppdb'); ?>" class="btn btn-success" role="button">Daftar</a>
+        <a href=" <?= base_url('ppdb/registration'); ?>" class="btn btn-success" role="button">Daftar</a>
         <a href="<?= base_url('ppdb/login'); ?>" class="btn btn-primary" role="button">Login</a>
       </div>
     </div>
