@@ -46,6 +46,22 @@ class User extends CI_Controller
         $this->load->view('templates/_partials/footer');
     }
 
+    public function print()
+    {
+        // $data = $this->load->view('mpdf_v');
+        // is_logged_in();
+
+        $data['title'] = 'Data Diri';
+        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
+        // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
+        $this->load->view('templates/_partials/header', $data);
+        $this->load->view('templates/_partials/sidebar', $data);
+        $this->load->view('templates/_partials/topbar', $data);
+        $this->load->view('siswa_baru/profile', $data);
+        $this->load->view('templates/_partials/footer');
+
+    }
+
     public function editProfile()
     {
         $data['title'] = 'Edit Data Diri';
@@ -113,22 +129,6 @@ class User extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Profil Anda berhasil diupdate</div>');
             redirect('user/profile');
         }
-    }
-
-    public function print()
-    {
-        // $data = $this->load->view('mpdf_v');
-        // is_logged_in();
-
-        $data['title'] = 'Data Diri';
-        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
-        // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
-        $this->load->view('templates/_partials/header', $data);
-        $this->load->view('templates/_partials/sidebar', $data);
-        $this->load->view('templates/_partials/topbar', $data);
-        $this->load->view('siswa_baru/profile', $data);
-        $this->load->view('templates/_partials/footer');
-
     }
 
 }
