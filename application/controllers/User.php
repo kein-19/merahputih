@@ -120,7 +120,7 @@ class User extends CI_Controller
         // $data = $this->load->view('mpdf_v');
         // is_logged_in();
 
-        $data['title'] = 'Data Diri';
+        // $data['title'] = 'Data Diri';
         $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
         // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
         $this->load->view('siswa_baru/print', $data);
