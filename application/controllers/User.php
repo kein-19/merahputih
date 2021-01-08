@@ -48,17 +48,10 @@ class User extends CI_Controller
 
     public function cetak()
     {
-        // $data = $this->load->view('mpdf_v');
-        // is_logged_in();
-
+        
         $data['title'] = 'Data Diri';
         $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
-        // $data['tbl_siswa_baru'] = $this->Model_siswa_baru->getSiswaBaru();
-        // $this->load->view('templates/_partials/header', $data);
-        // $this->load->view('templates/_partials/sidebar', $data);
-        // $this->load->view('templates/_partials/topbar', $data);
         $this->load->view('siswa_baru/print', $data);
-        // $this->load->view('templates/_partials/footer');
     }
 
     public function editProfile()

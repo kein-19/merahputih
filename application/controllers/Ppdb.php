@@ -300,10 +300,10 @@ class Ppdb extends CI_Controller
         redirect('ppdb');
     }
 
-    // public function print($kode_pendaftaran)
-    // {
-    //     $data['title'] = 'Detail Data Siswa Baru';
-    //     $data['tbl_datappdb'] = $this->Model_ppdb->getPPDBId($kode_pendaftaran);
-    //     $this->load->view('ppdb/print', $data);
-    // }
+    public function cetak($kode_pendaftaran)
+    {
+        $data['title'] = 'Detail Data Siswa Baru';
+        $data['tbl_datappdb'] = $this->Model_ppdb->getPPDBId($kode_pendaftaran);
+        $this->load->view('ppdb/print', $data);
+    }
 }
