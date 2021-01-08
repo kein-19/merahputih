@@ -4,15 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class User extends CI_Controller
 {
 
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    //     if (!$this->session->userdata('email')) {
-    //         redirect('index');
-    //     }
-    // }
-
-
     public function __construct()
     {
         parent::__construct();
@@ -45,10 +36,6 @@ class User extends CI_Controller
 
     public function profile()
     {
-        // $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
-        // $this->Model_ppdb->getAgama();
-        // $this->db->get('tbl_agama')->row_array();
-        // $this->db->get_where('tbl_datappdb', ['kode_pendaftaran' => $this->session->userdata('kode_pendaftaran')])->row_array();
         $data['title'] = 'Data Diri';
         $data['tbl_datappdb'] = $this->Model_ppdb->getPPDB();
 
