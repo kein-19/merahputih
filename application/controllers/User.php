@@ -46,7 +46,7 @@ class User extends CI_Controller
         $this->load->view('templates/_partials/footer');
     }
 
-    public function print()
+    public function cetak()
     {
         // $data = $this->load->view('mpdf_v');
         // is_logged_in();
@@ -59,7 +59,6 @@ class User extends CI_Controller
         $this->load->view('templates/_partials/topbar', $data);
         $this->load->view('siswa_baru/profile', $data);
         $this->load->view('templates/_partials/footer');
-
     }
 
     public function editProfile()
@@ -130,5 +129,4 @@ class User extends CI_Controller
             redirect('user/profile');
         }
     }
-
 }
