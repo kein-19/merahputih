@@ -11,7 +11,7 @@ if (flashGambar) {
 else if (flashGambar) {
 	Swal.fire({
 		title: 'Gambar',
-		text: 'Harus diupload',
+		text: 'Harus ' + flashGambar,,
 		icon: 'warning'
 	});
 }
