@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Menu extends CI_Controller
 {
     public function __construct()
@@ -14,17 +13,11 @@ class Menu extends CI_Controller
     public function index()
     {
         $data['title'] = 'Menu Management';
-        // $data['tbl_datappdb'] = $this->db->get_where('tbl_datappdb', ['email' => $this->session->userdata('email')])->row_array();
-
-        // $this->db->where('id !=', 3);
         $data['menu'] = $this->db->get('t_user_menu')->result_array();
-
         $this->form_validation->set_rules('menu', 'Menu', 'required');
         $this->form_validation->set_rules('menu_icon', 'Menu Icon', 'required');
-
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
-
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
@@ -51,30 +44,23 @@ class Menu extends CI_Controller
     {
         $data['title'] = 'Menu Management';
         $data['tbl_datappdb'] = $this->db->get_where('tbl_datappdb', ['email' => $this->session->userdata('email')])->row_array();
-
         $data['menu'] = $this->db->get('t_user_menu')->result_array();
-
         $this->form_validation->set_rules('menu', 'Menu', 'required');
-
         if ($this->form_validation->run() == false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
-
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
             $this->load->view('menu/index', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            // $this->db->insert('t_user_menu', ['menu' => $this->input->post('menu')]);
             $data = [
                 'menu'      => $this->input->post('menu'),
                 'menu_icon' => $this->input->post('menu_icon')
-
             ];
             $this->db->where('id', $this->input->post('id'));
             $this->db->update('t_user_menu', $data);
             $this->session->set_flashdata('flash', 'diubah');
-
             redirect('menu');
         }
     }
@@ -86,25 +72,19 @@ class Menu extends CI_Controller
         redirect('menu');
     }
 
-
-
     public function submenu()
     {
         $data['title'] = 'Submenu Management';
         $data['tbl_datappdb'] = $this->db->get_where('tbl_datappdb', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->model('Menu_model', 'menu');
-
         $data['subMenu'] = $this->menu->getSubMenu();
         $data['menu'] = $this->db->get('t_user_menu')->result_array();
-
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('menu_id', 'Menu', 'required');
         $this->form_validation->set_rules('url', 'URL', 'required');
         $this->form_validation->set_rules('icon', 'Icon', 'required');
-
         if ($this->form_validation->run() ==  false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
-
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
@@ -120,20 +100,14 @@ class Menu extends CI_Controller
             ];
             $this->db->insert('t_user_sub_menu', $data);
             $this->session->set_flashdata('flash', 'ditambahkan');
-
-            // $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">New sub menu added!</div>');
             redirect('menu/submenu');
         }
     }
 
-
     public function getedit()
     {
         $id = $this->input->post('id');
-        // echo $id;
-        // $this->Menu_model->getSubMenuId($id);
         echo json_encode($this->Menu_model->getSubMenuId($id));
-        // echo json_encode($this->Menu_model->getSubMenu($id));
     }
 
     public function editsubmenu()
@@ -141,18 +115,14 @@ class Menu extends CI_Controller
         $data['title'] = 'Submenu Management';
         $data['tbl_datappdb'] = $this->db->get_where('tbl_datappdb', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->model('Menu_model', 'menu');
-
         $data['subMenu'] = $this->menu->getSubMenu();
         $data['menu'] = $this->db->get('t_user_menu')->result_array();
-
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('menu_id', 'Menu', 'required');
         $this->form_validation->set_rules('url', 'URL', 'required');
         $this->form_validation->set_rules('icon', 'Icon', 'required');
-
         if ($this->form_validation->run() ==  false) {
             $data['tbl_user'] = $this->Model_user->getAdmin();
-
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
@@ -169,8 +139,6 @@ class Menu extends CI_Controller
             $this->db->where('id', $this->input->post('id'));
             $this->db->update('t_user_sub_menu', $data);
             $this->session->set_flashdata('flash', 'diubah');
-
-            // $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Sub menu edited!</div>');
             redirect('menu/submenu');
         }
     }

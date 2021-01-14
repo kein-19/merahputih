@@ -203,7 +203,7 @@ class Siswa extends CI_Controller
             $this->load->view('siswa/edit', $data);
             $this->load->view('templates/admin/footer');
         } else {
-            $this->Model_siswa->editDataSiswa();
+            $this->Model_siswa->editDataSiswa($nis);
             $this->session->set_flashdata('flash', 'diupdate');
             redirect('siswa');
         }

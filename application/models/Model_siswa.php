@@ -136,7 +136,7 @@ class Model_siswa extends CI_Model
         $this->db->insert('tbl_siswa', $data);
     }
 
-    public function editDataSiswa()
+    public function editDataSiswa($fixkode)
     {
 
         $nama = $this->input->post('nama', TRUE);
