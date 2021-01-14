@@ -136,15 +136,15 @@ class Model_siswa extends CI_Model
         $this->db->insert('tbl_siswa', $data);
     }
 
-    public function editDataSiswa($fixkode)
+    public function editDataSiswa()
     {
 
         $nama = $this->input->post('nama', TRUE);
         $email = $this->input->post('email', true);
-        $fixkode = $this->input->post('nis', true);
+        // $fixkode = $this->input->post('nis', true);
 
         $data = [
-            'nis'                   => ($fixkode),
+            // 'nis'                   => ($fixkode),
             'nama'                  => htmlspecialchars($nama),
             'tempat_lahir'          => htmlspecialchars($this->input->post('tempat_lahir', TRUE)),
             'tanggal_lahir'         => htmlspecialchars($this->input->post('tanggal_lahir', TRUE)),
@@ -213,7 +213,7 @@ class Model_siswa extends CI_Model
         // $this->db->set('name', $data);
 
         // $this->db->set('image', $new_image);
-        $this->db->where('nis', $fixkode);
+        $this->db->where('nis', $this->input->post('nis'));
         $this->db->update('tbl_siswa', $data);
     }
 
