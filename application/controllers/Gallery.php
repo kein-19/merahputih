@@ -50,7 +50,7 @@ class Gallery extends CI_Controller
     {
         is_logged_in();
         $this->form_validation->set_rules('title', 'Title', 'required|trim');
-        $this->form_validation->set_rules('image', 'Image', 'required');
+        // $this->form_validation->set_rules('image', 'Image', 'required');
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Add Image';
             $data['tbl_user'] = $this->Model_user->getAdmin();
