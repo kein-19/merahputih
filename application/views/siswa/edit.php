@@ -20,33 +20,6 @@
                         <div class="col-sm-9">
 
                             <div class="form-group row">
-                                <label class="col-sm-5 col-form-label col-form-label-sm" for="is_active">
-                                    Status Validasi
-                                </label>
-                                <div class="col-sm-4">
-                                    <?php
-                                    $is_active = array(
-                                        null => '- Silahkan Pilih -',
-                                        0 => 'Belum',
-                                        1 => 'Sudah'
-                                    );
-                                    $pilih = $tbl_siswa['is_active'];
-                                    echo form_dropdown(
-                                        'is_active',
-                                        $is_active,
-                                        $pilih,
-                                        "class='form-control form-control-sm'"
-                                    );
-                                    ?>
-                                </div>
-                                <?php if ($tbl_siswa['is_active'] == 1) : ?>
-                                    <i class="col-form-label col-form-label-sm text-success fas fa-check"></i>
-                                <?php elseif ($tbl_siswa['is_active'] == 0) : ?>
-                                    <i class="col-form-label col-form-label-sm text-danger fas fa-exclamation"></i>
-                                <?php endif; ?>
-                            </div>
-
-                            <div class="form-group row">
                                 <label class="col-sm-5 col-form-label col-form-label-sm" for="nis">
                                     Nomor Formulir
                                 </label>
