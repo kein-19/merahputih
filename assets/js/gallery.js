@@ -8,6 +8,13 @@ if (flashGambar) {
 		icon: 'success'
 	});
 }
+else if (flashGambar) {
+	Swal.fire({
+		title: 'Gambar',
+		text: 'Harus diupload',
+		icon: 'warning'
+	});
+}
 
 // tombol-hapus
 $('.tombol-hapusgallery').on('click', function (e) {
