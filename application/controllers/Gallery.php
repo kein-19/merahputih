@@ -59,7 +59,7 @@ class Gallery extends CI_Controller
             $this->load->view('templates/admin/topbar', $data);
             $this->load->view('gallery/addimage', $data);
             $this->load->view('templates/admin/footer');
-            // $this->session->set_flashdata('flash', 'diupload');
+        // $this->session->set_flashdata('flash', 'diupload');
             // redirect('gallery');
         } else {
             $this->Model_gallery->addImage();

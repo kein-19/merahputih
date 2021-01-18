@@ -123,12 +123,12 @@ class Model_sekolah extends CI_Model
 
         // $this->db->set('image', $new_image);
         // $this->db->where('id', 1)->update('tbl_profile', $this->input->post());
-        $this->db->where('id', 1)->update('tbl_profile', $data);
-        // $this->db->where('id', $this->input->post('id'));
-        // $this->db->update(
-        //     'tbl_profile',
-        //     $data
-        // );
+        // $this->db->where('id', )->update('tbl_profile', $data);
+        $this->db->where('id', $this->input->post('id'));
+        $this->db->update(
+            'tbl_profile',
+            $data
+        );
         // $this->db->where('nis', $fixkode);
         // $this->db->update('tbl_profile', $data);
     }
