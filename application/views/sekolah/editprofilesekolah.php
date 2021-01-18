@@ -28,7 +28,7 @@
                         <label class="col-sm-5 col-form-label col-form-label-sm" for="deskripsi">
                             Deskripsi
                         </label>
-                        <input type="text" class="form-control form-control-sm form-control form-control-sm" id="id" name="id" value="<?= $tbl_profile['id']; ?>" readonly>
+                        <!-- <input type="text" class="form-control form-control-sm form-control form-control-sm" id="id" name="id" value="<?= $tbl_profile['id']; ?>" readonly> -->
                         <div class="col-sm-7">
                             <textarea rows="7" cols="50" name="deskripsi" id="deskripsi" class="form-control form-control-sm"><?= $tbl_profile['deskripsi']; ?></textarea>
                         </div>
