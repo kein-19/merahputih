@@ -55,6 +55,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-sm-5 col-form-label col-form-label-sm" for="nik">
+                                    NIK
+                                </label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="nik" placeholder="Masukkan NIK" id="nik" class="form-control form-control-sm" value="<?= $tbl_datappdb['nik']; ?>">
+                                </div>
+                                <?= form_error('nik', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-sm-5 col-form-label col-form-label-sm" for="nama">
                                     Nama Lengkap
                                 </label>
@@ -214,6 +223,33 @@
                                 <div class="col-sm-4">
                                     <input type="text" class="form-control form-control-sm form-control form-control-sm" id="email" name="email" placeholder="E-mail" value="<?= $tbl_datappdb['email']; ?>" readonly>
                                 </div>
+                            </div>
+                            <div class="form-group row mb-lg-5">
+                                <label class="col-sm-5 col-form-label col-form-label-sm" for="kartu_kip">
+                                    Kartu KIP/PKH/KKS 
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control form-control-sm form-control form-control-sm" id="kartu_kip" name="kartu_kip" placeholder="Isi Nomor Kartu KIP/PKH/KKS" value="<?= $tbl_datappdb['kartu_kip']; ?>">
+                                </div>
+                                <?= form_error('kartu_kip', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="form-group row mb-lg-5">
+                                <label class="col-sm-5 col-form-label col-form-label-sm" for="cita_cita">
+                                    Cita-cita
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control form-control-sm form-control form-control-sm" id="cita_cita" name="cita_cita" placeholder="Cita-cita" value="<?= $tbl_datappdb['cita_cita']; ?>">
+                                </div>
+                                <?= form_error('cita_cita', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="form-group row mb-lg-5">
+                                <label class="col-sm-5 col-form-label col-form-label-sm" for="hobi">
+                                    Hobi
+                                </label>
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control form-control-sm form-control form-control-sm" id="hobi" name="hobi" placeholder="Hobi" value="<?= $tbl_datappdb['hobi']; ?>">
+                                </div>
+                                <?= form_error('hobi', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                             </div>
 
                         </div>
@@ -447,13 +483,23 @@
                     <h3 class="h5 text-gray-900 mt-sm-5 mb-sm-3">Keterangan Data Orang Tua Siswa</h3>
 
                     <div class="form-group row">
-                        <label class="col-sm-5 col-form-label col-form-label-sm" for="nama_ot">
-                            Nama Orang Tua/Wali
+                        <label class="col-sm-5 col-form-label col-form-label-sm" for="nama_ayah">
+                            Nama Lengkap Ayah
                         </label>
                         <div class="col-sm-7">
-                            <input type="text" name="nama_ot" placeholder="Masukkan Nama Orang Tua/Wali" id="nama_ot" class="form-control form-control-sm" value="<?= $tbl_datappdb['nama_ot']; ?>">
+                            <input type="text" name="nama_ayah" placeholder="Masukkan Nama Lengkap Ayah" id="nama_ayah" class="form-control form-control-sm" value="<?= $tbl_datappdb['nama_ayah']; ?>">
                         </div>
-                        <?= form_error('nama_ot', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
+                        <?= form_error('nama_ayah', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label col-form-label-sm" for="nama_ibu">
+                            Nama Lengkap Ibu
+                        </label>
+                        <div class="col-sm-7">
+                            <input type="text" name="nama_ibu" placeholder="Masukkan Nama Lengkap Ibu" id="nama_ibu" class="form-control form-control-sm" value="<?= $tbl_datappdb['nama_ibu']; ?>">
+                        </div>
+                        <?= form_error('nama_ibu', '<div class="col-sm-5"></div><small class="text-danger mt-sm-1 pl-3">', '</small>'); ?>
                     </div>
 
                     <div class="form-group row">

@@ -88,6 +88,7 @@ class Model_ppdb extends CI_Model
 
         $data = [
             'kode_pendaftaran'      => ($fixkode),
+            'nik'                   => htmlspecialchars($this->input->post('nik', TRUE)),
             'nama'                  => htmlspecialchars($nama),
             'tempat_lahir'          => htmlspecialchars($this->input->post('tempat_lahir', TRUE)),
             'tanggal_lahir'         => htmlspecialchars($this->input->post('tanggal_lahir', TRUE)),
@@ -114,9 +115,13 @@ class Model_ppdb extends CI_Model
             'pindahan'              => htmlspecialchars($this->input->post('pindahan', TRUE)),
             'suratpindah'           => $this->input->post('suratpindah', TRUE),
             'alasan'                => htmlspecialchars($this->input->post('alasan', TRUE)),
+            'kartu_kip'             => htmlspecialchars($this->input->post('kartu_kip', TRUE)),
+            'cita_cita'             => htmlspecialchars($this->input->post('cita_cita', TRUE)),
+            'hobi'                  => htmlspecialchars($this->input->post('hobi', TRUE)),
 
             // data orang tua siswa
-            'nama_ot'               => htmlspecialchars($this->input->post('nama_ot', TRUE)),
+            'nama_ayah'             => htmlspecialchars($this->input->post('nama_ayah', TRUE)),
+            'nama_ibu'              => htmlspecialchars($this->input->post('nama_ibu', TRUE)),
             'alamat_ot'             => htmlspecialchars($this->input->post('alamat_ot', TRUE)),
             'no_hp_ot'              => htmlspecialchars($this->input->post('no_hp_ot', TRUE)),
             'pendidikan_ot'         => htmlspecialchars($this->input->post('pendidikan_ot', TRUE)),
@@ -152,6 +157,7 @@ class Model_ppdb extends CI_Model
 
         $data = [
             // 'kode_pendaftaran'      => ($fixkode),
+            'nik'                   => htmlspecialchars($this->input->post('nik', TRUE)),
             'nama'                  => htmlspecialchars($nama),
             'tempat_lahir'          => htmlspecialchars($this->input->post('tempat_lahir', TRUE)),
             'tanggal_lahir'         => htmlspecialchars($this->input->post('tanggal_lahir', TRUE)),
@@ -178,9 +184,13 @@ class Model_ppdb extends CI_Model
             'pindahan'              => htmlspecialchars($this->input->post('pindahan', TRUE)),
             'suratpindah'           => $this->input->post('suratpindah', TRUE),
             'alasan'                => htmlspecialchars($this->input->post('alasan', TRUE)),
+            'kartu_kip'             => htmlspecialchars($this->input->post('kartu_kip', TRUE)),
+            'cita_cita'             => htmlspecialchars($this->input->post('cita_cita', TRUE)),
+            'hobi'                  => htmlspecialchars($this->input->post('hobi', TRUE)),
 
             // data orang tua siswa
-            'nama_ot'               => htmlspecialchars($this->input->post('nama_ot', TRUE)),
+            'nama_ayah'             => htmlspecialchars($this->input->post('nama_ayah', TRUE)),
+            'nama_ibu'              => htmlspecialchars($this->input->post('nama_ibu', TRUE)),
             'alamat_ot'             => htmlspecialchars($this->input->post('alamat_ot', TRUE)),
             'no_hp_ot'              => htmlspecialchars($this->input->post('no_hp_ot', TRUE)),
             'pendidikan_ot'         => htmlspecialchars($this->input->post('pendidikan_ot', TRUE)),
@@ -239,6 +249,7 @@ class Model_ppdb extends CI_Model
 
         $data = [
             'kode_pendaftaran'      => ($fixkode),
+            'nik'                   => htmlspecialchars($this->input->post('nik', TRUE)),
             'nama'                  => htmlspecialchars($nama),
             'tempat_lahir'          => htmlspecialchars($this->input->post('tempat_lahir', TRUE)),
             'tanggal_lahir'         => htmlspecialchars($this->input->post('tanggal_lahir', TRUE)),
@@ -265,9 +276,13 @@ class Model_ppdb extends CI_Model
             'pindahan'              => htmlspecialchars($this->input->post('pindahan', TRUE)),
             'suratpindah'           => $this->input->post('suratpindah', TRUE),
             'alasan'                => htmlspecialchars($this->input->post('alasan', TRUE)),
+            'kartu_kip'             => htmlspecialchars($this->input->post('kartu_kip', TRUE)),
+            'cita_cita'             => htmlspecialchars($this->input->post('cita_cita', TRUE)),
+            'hobi'                  => htmlspecialchars($this->input->post('hobi', TRUE)),
 
             // data orang tua siswa
-            'nama_ot'               => htmlspecialchars($this->input->post('nama_ot', TRUE)),
+            'nama_ayah'             => htmlspecialchars($this->input->post('nama_ayah', TRUE)),
+            'nama_ibu'              => htmlspecialchars($this->input->post('nama_ibu', TRUE)),
             'alamat_ot'             => htmlspecialchars($this->input->post('alamat_ot', TRUE)),
             'no_hp_ot'              => htmlspecialchars($this->input->post('no_hp_ot', TRUE)),
             'pendidikan_ot'         => htmlspecialchars($this->input->post('pendidikan_ot', TRUE)),

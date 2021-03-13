@@ -61,6 +61,7 @@ class User extends CI_Controller
         // $data['tbl_datappdb'] = $this->Model_ppdb->getAgama();
         // $data['nama_agama'] = $this->db->get('tbl_agama')->row_array();
 
+        $this->form_validation->set_rules('nik', 'NIK Siswa', 'required|trim');
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
@@ -95,9 +96,13 @@ class User extends CI_Controller
         //     'min_length' => 'Password too short!'
         // ]);
         // $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
-
+        $this->form_validation->set_rules('kartu_kip', 'Kartu KIP/PKH/KKS', 'required|trim');
+        $this->form_validation->set_rules('cita_cita', 'Cita-Cita', 'required|trim');
+        $this->form_validation->set_rules('hobi', 'Hobi', 'required|trim');
+        
         // Data Orang Tua Siswa
-        $this->form_validation->set_rules('nama_ot', 'Nama Orang Tua/Wali', 'required|trim');
+        $this->form_validation->set_rules('nama_ayah', 'Nama Ayah', 'required|trim');
+        $this->form_validation->set_rules('nama_ibu', 'Nama Ibu', 'required|trim');
         $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
         $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
         $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');

@@ -61,7 +61,7 @@ class Ppdb extends CI_Controller
         if ($this->session->userdata('kode_pendaftaran')) {
             redirect('user');
         }
-
+        $this->form_validation->set_rules('nik', 'NIK Siswa', 'required|trim');
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
@@ -88,9 +88,13 @@ class Ppdb extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_datappdb.email]', [
             'is_unique' => 'Email sudah terdaftar!'
         ]);
-
+        $this->form_validation->set_rules('kartu_kip', 'Kartu KIP/PKH/KKS', 'required|trim');
+        $this->form_validation->set_rules('cita_cita', 'Cita-Cita', 'required|trim');
+        $this->form_validation->set_rules('hobi', 'Hobi', 'required|trim');
+        
         // Data Orang Tua Siswa
-        $this->form_validation->set_rules('nama_ot', 'Nama Orang Tua/Wali', 'required|trim');
+        $this->form_validation->set_rules('nama_ayah', 'Nama Ayah', 'required|trim');
+        $this->form_validation->set_rules('nama_ibu', 'Nama Ibu', 'required|trim');
         $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
         $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
         $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');
@@ -158,7 +162,7 @@ class Ppdb extends CI_Controller
     public function add()
     {
         is_logged_in();
-
+        $this->form_validation->set_rules('nik', 'NIK Siswa', 'required|trim');
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
@@ -185,9 +189,13 @@ class Ppdb extends CI_Controller
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[tbl_datappdb.email]', [
             'is_unique' => 'Email sudah terdaftar!'
         ]);
-
+        $this->form_validation->set_rules('kartu_kip', 'Kartu KIP/PKH/KKS', 'required|trim');
+        $this->form_validation->set_rules('cita_cita', 'Cita-Cita', 'required|trim');
+        $this->form_validation->set_rules('hobi', 'Hobi', 'required|trim');
+        
         // Data Orang Tua Siswa
-        $this->form_validation->set_rules('nama_ot', 'Nama Orang Tua/Wali', 'required|trim');
+        $this->form_validation->set_rules('nama_ayah', 'Nama Ayah', 'required|trim');
+        $this->form_validation->set_rules('nama_ibu', 'Nama Ibu', 'required|trim');
         $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
         $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
         $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');
@@ -243,7 +251,7 @@ class Ppdb extends CI_Controller
     public function edit($kode_pendaftaran)
     {
         is_logged_in();
-
+        $this->form_validation->set_rules('nik', 'NIK Siswa', 'required|trim');
         $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
         $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required|trim');
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
@@ -268,10 +276,14 @@ class Ppdb extends CI_Controller
         $this->form_validation->set_rules('nisn', 'Nomor Induk Siswa Nasional (NISN)', 'required|trim|numeric|exact_length[10]');
         $this->form_validation->set_rules('no_sttb', 'Tanggal/Tahun/No.STTB', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
-
+        $this->form_validation->set_rules('kartu_kip', 'Kartu KIP/PKH/KKS', 'required|trim');
+        $this->form_validation->set_rules('cita_cita', 'Cita-Cita', 'required|trim');
+        $this->form_validation->set_rules('hobi', 'Hobi', 'required|trim');
+        
         // Data Orang Tua Siswa
-        $this->form_validation->set_rules('nama_ot', 'Nama Orang Tua/Wali', 'required|trim');
-        $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');
+        $this->form_validation->set_rules('nama_ayah', 'Nama Ayah', 'required|trim');
+        $this->form_validation->set_rules('nama_ibu', 'Nama Ibu', 'required|trim');
+        $this->form_validation->set_rules('alamat_ot', 'Alamat Orang Tua/Wali', 'required|trim');     
         $this->form_validation->set_rules('no_hp_ot', 'No. HP', 'required|trim|numeric|min_length[10]|max_length[13]');
         $this->form_validation->set_rules('pendidikan_ot', 'Pendidikan Terakhir', 'required|trim');
         $this->form_validation->set_rules('pekerjaan_ot', 'Pekerjaan', 'required|trim');
